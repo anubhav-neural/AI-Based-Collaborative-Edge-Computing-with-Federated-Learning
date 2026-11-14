@@ -1,0 +1,15 @@
+Task_UID,Task_ID,Node_ID,Task_Type,Execution_Time_s,Communication_Time_s,Total_Response_Time_s,Status,Error_Message
+4ec3af0f-e671-43da-9982-56e6124dc81f,101,1,matrix_multiplication,0.0,1.08509,1.08509,Failed,cannot import name 'SystemRandom' from 'random' (C:\Users\Yuvanshu Dadhich\OneDrive\Desktop\CN_PROJECT\random.py)
+84696c2d-cc1c-4d9e-aa32-6f77e8eba719,102,2,sorting,0.0,1.06265,1.06265,Failed,cannot import name 'SystemRandom' from 'random' (C:\Users\Yuvanshu Dadhich\OneDrive\Desktop\CN_PROJECT\random.py)
+0fb76240-59ba-4321-ab13-a4c1a059a943,103,3,numerical_computation,0.000243,0.012469,0.012712,success,
+03a2e82a-5ca4-4567-817b-0f114b2d0f52,104,4,data_preprocessing,0.0,1.047043,1.047043,Failed,cannot import name 'SystemRandom' from 'random' (C:\Users\Yuvanshu Dadhich\OneDrive\Desktop\CN_PROJECT\random.py)
+44da4e92-fce1-4a6c-b373-3534c5907392,105,1,matrix_multiplication,0.0,0.014338,0.014338,Failed,cannot import name 'SystemRandom' from 'random' (C:\Users\Yuvanshu Dadhich\OneDrive\Desktop\CN_PROJECT\random.py)
+cccfb244-32e3-4846-8129-3d97d477ff9f,101,1,matrix_multiplication,0.000505,0.017929,0.018434,success,
+5c5449a3-c4d3-4cee-8bd6-3a74c1180614,102,2,sorting,0.045781,0.007569,0.05335,success,
+bac3ef5f-789e-420a-898b-7308666728aa,103,3,numerical_computation,0.000237,0.009204,0.009441,success,
+b3055a34-7994-40a7-9c45-baa5dfeb6008,104,4,data_preprocessing,0.04179,0.010162,0.051952,success,
+a386b40f-1b85-4da1-8cd5-20f38290180d,105,3,matrix_multiplication,0.041474,0.005392,0.046866,success,
+aea6bdf1-32b1-4d44-9807-2f0d1ebd0f6b,106,3,sorting,0.000727,0.006592,0.007318,success,
+f60cc4aa-8417-4bc9-a0ac-0036cf70f32a,107,2,numerical_computation,0.000152,0.005291,0.005442,success,
+e9c9e792-fa6d-4a75-b2ae-80e125681cef,108,3,numerical_computation,0.000176,0.007563,0.007739,success,
+67d23d35-49a3-4da9-a864-743b88d3a75f,109,4,data_preprocessing,0.000264,0.007769,0.008034,success,
