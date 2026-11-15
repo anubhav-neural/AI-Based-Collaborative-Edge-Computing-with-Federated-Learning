@@ -1,0 +1,7 @@
+policy,trial,selected_node,queue_running,queue_waiting,scheduler_ms,task_tcp_ms,schedule_plus_task_ms,background_completed,error
+V2,1,4,1,3,27.609,49.487,77.095,4,
+V1,1,1,1,3,1.1,8030.838,8031.938,4,
+V1,2,1,1,3,0.894,6034.074,6034.968,4,
+V2,2,4,1,3,132.891,25.844,158.735,4,
+V1,3,1,1,3,1.224,8042.065,8043.289,4,
+V2,3,4,1,3,99.882,23.19,123.072,4,
