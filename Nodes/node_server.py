@@ -1,4 +1,5 @@
 
+
 import socketserver
 import json
 import time
@@ -7,13 +8,22 @@ import threading
 import sys
 from pathlib import Path
 
-# Add main project directory to Python path
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+# Add project root to Python path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
 
 from monitoring.resource_monitor import ResourceMonitor
 
+
 HOST = "127.0.0.1"
 
+# Maximum size of an incoming JSON request
+MAX_REQUEST_BYTES = 1024 * 1024
+
+
+# ============================================================
+# 1. TASK EXECUTION
+# ============================================================
 
 def execute_task(task):
 
@@ -23,8 +33,10 @@ def execute_task(task):
 
         size = int(task.get("size", 10))
 
-        if size < 1 or size > 100:
-            raise ValueError("Matrix size must be between 1 and 100")
+        if not 1 <= size <= 100:
+            raise ValueError(
+                "Matrix size must be between 1 and 100"
+            )
 
         a = np.random.rand(size, size)
         b = np.random.rand(size, size)
@@ -40,7 +52,7 @@ def execute_task(task):
 
         size = int(task.get("size", 1000))
 
-        if size < 1 or size > 1000000:
+        if not 1 <= size <= 1000000:
             raise ValueError("Invalid array size")
 
         arr = np.random.randint(1, 100000, size)
@@ -57,11 +69,12 @@ def execute_task(task):
 
         size = int(task.get("size", 1000))
 
-        if size < 1 or size > 1000000:
+        if not 1 <= size <= 1000000:
             raise ValueError("Invalid computation size")
 
         arr = np.arange(1, size + 1)
 
+        # Preserve the original numerical operation.
         result = np.sum(arr ** 2)
 
         output = {
@@ -72,7 +85,7 @@ def execute_task(task):
 
         size = int(task.get("size", 1000))
 
-        if size < 1 or size > 1000000:
+        if not 1 <= size <= 1000000:
             raise ValueError("Invalid data size")
 
         arr = np.random.rand(size)
@@ -83,7 +96,10 @@ def execute_task(task):
         if maximum == minimum:
             result = np.zeros(size)
         else:
-            result = (arr - minimum) / (maximum - minimum)
+            result = (
+                (arr - minimum) /
+                (maximum - minimum)
+            )
 
         output = {
             "processed_count": len(result),
@@ -91,7 +107,9 @@ def execute_task(task):
         }
 
     else:
-        raise ValueError("Unknown operation")
+        raise ValueError(
+            f"Unknown operation: {operation}"
+        )
 
     return {
         "status": "success",
@@ -103,12 +121,14 @@ def execute_task(task):
     }
 
 
+# ============================================================
+# 2. TCP REQUEST HANDLER
+# ============================================================
+
 class NodeHandler(socketserver.StreamRequestHandler):
 
     def setup(self):
-
         super().setup()
-
         self.connection_start = time.perf_counter()
 
     def handle(self):
@@ -119,25 +139,61 @@ class NodeHandler(socketserver.StreamRequestHandler):
         waiting_accounted = True
 
         response = None
-
         task = {}
 
         try:
 
-            line = self.rfile.readline()
+            # Limit input size.
+            line = self.rfile.readline(
+                MAX_REQUEST_BYTES + 1
+            )
 
             receive_end = time.perf_counter()
 
             if not line:
                 return
 
-            # Decode incoming task
-            task = json.loads(line.decode("utf-8"))
+            if len(line) > MAX_REQUEST_BYTES:
+                raise ValueError(
+                    "Request exceeds maximum allowed size"
+                )
+
+            if not line.endswith(b"\n"):
+                raise ValueError(
+                    "Incomplete JSON request"
+                )
+
+            task = json.loads(
+                line.decode("utf-8")
+            )
 
             if not isinstance(task, dict):
-                raise ValueError("Task must be a JSON object")
+                raise ValueError(
+                    "Task must be a JSON object"
+                )
 
-            # Update queue and running task count
+            operation = task.get("operation")
+
+            # =================================================
+            # 3. LIVE RESOURCE STATUS REQUEST
+            # =================================================
+
+            if operation == "get_status":
+
+                # Remove the status request from the
+                # waiting-task counter.
+                server.cancel_waiting()
+                waiting_accounted = False
+
+                response = server.get_live_status()
+
+                # The finally block sends the response.
+                return
+
+            # =================================================
+            # 4. NORMAL COMPUTATION TASK
+            # =================================================
+
             server.start_task()
 
             task_started = True
@@ -145,81 +201,89 @@ class NodeHandler(socketserver.StreamRequestHandler):
 
             data_size = len(line)
 
-            # Calculate arrival elapsed time
-            sent_timestamp = task.get("sent_timestamp")
+            sent_timestamp = task.get(
+                "sent_timestamp"
+            )
 
-            latency_ms = 0
+            latency_ms = 0.0
 
             if sent_timestamp is not None:
 
                 latency_ms = max(
-                    0,
-                    (time.time() - float(sent_timestamp)) * 1000
+                    0.0,
+                    (
+                        time.time() -
+                        float(sent_timestamp)
+                    ) * 1000
                 )
 
-            # Estimate receiving duration
+            # Time from accepted connection to
+            # receipt of the request.
             transfer_time_ms = (
-                receive_end - self.connection_start
+                receive_end -
+                self.connection_start
             ) * 1000
 
-            # Estimate bandwidth
             if transfer_time_ms > 0:
 
                 bandwidth = (
                     data_size * 8
-                ) / (transfer_time_ms * 1000)
+                ) / (
+                    transfer_time_ms * 1000
+                )
 
             else:
-                bandwidth = 0
+                bandwidth = 0.0
 
-            # Record communication metrics
             server.record_metrics(
-                latency_ms,
-                bandwidth,
-                transfer_time_ms
+                latency=latency_ms,
+                bandwidth=bandwidth,
+                transfer=transfer_time_ms
             )
 
             print("\nTask received:")
             print(task)
 
-            # Execute task exactly once
+            # Measure the execution operation.
             start_time = time.perf_counter()
 
             response = execute_task(task)
 
-            end_time = time.perf_counter()
+            execution_time = (
+                time.perf_counter() -
+                start_time
+            )
 
-            # Calculate execution time
-            execution_time = end_time - start_time
+            response["execution_time"] = (
+                execution_time
+            )
 
-            execution_time_ms = execution_time * 1000
-
-            # Add timing information
-            response["execution_time"] = execution_time
-
-            response["execution_time_ms"] = execution_time_ms
+            response["execution_time_ms"] = (
+                execution_time * 1000
+            )
 
             response["latency_ms"] = latency_ms
 
-        except Exception as e:
+        except Exception as error:
 
             response = {
                 "status": "error",
                 "node_id": server.node_id,
                 "task_id": task.get("task_id"),
                 "task_uid": task.get("task_uid"),
-                "message": str(e),
+                "message": str(error),
                 "execution_time": 0,
                 "execution_time_ms": 0,
                 "latency_ms": 0
             }
 
             print("\nTask execution failed:")
-            print("Error:", str(e))
+            print("Error:", error)
 
         finally:
 
-            # Remove request from queue if it never started
+            # Requests not converted into computation
+            # tasks must be removed from waiting count.
             if waiting_accounted:
                 server.cancel_waiting()
 
@@ -227,24 +291,37 @@ class NodeHandler(socketserver.StreamRequestHandler):
 
                 if response is not None:
 
+                    encoded_response = (
+                        json.dumps(response) + "\n"
+                    ).encode("utf-8")
+
                     self.wfile.write(
-                        (json.dumps(response) + "\n").encode("utf-8")
+                        encoded_response
                     )
 
                     self.wfile.flush()
 
-                    print("\nTask response:")
-                    print(response)
+                    # Avoid excessive logging for status polls.
+                    if task.get("operation") != "get_status":
+                        print("\nTask response:")
+                        print(response)
 
-            except Exception as e:
+            except Exception as error:
 
-                print("Response sending failed:", str(e))
+                print(
+                    "Response sending failed:",
+                    error
+                )
 
             finally:
 
                 if task_started:
                     server.finish_task()
 
+
+# ============================================================
+# 5. NODE SERVER AND RESOURCE TRACKING
+# ============================================================
 
 class NodeServer(socketserver.ThreadingTCPServer):
 
@@ -260,24 +337,27 @@ class NodeServer(socketserver.ThreadingTCPServer):
 
         self.task_lock = threading.Lock()
 
-        self.monitor = ResourceMonitor(f"Node{node_id}")
+        self.monitor = ResourceMonitor(
+            f"Node{node_id}"
+        )
 
     def process_request(self, request, client_address):
 
         with self.task_lock:
-
             self.waiting_tasks += 1
 
-            self.record_metrics()
+        self.record_metrics()
 
         try:
 
-            super().process_request(request, client_address)
+            super().process_request(
+                request,
+                client_address
+            )
 
         except Exception:
 
             self.cancel_waiting()
-
             raise
 
     def start_task(self):
@@ -285,54 +365,104 @@ class NodeServer(socketserver.ThreadingTCPServer):
         with self.task_lock:
 
             self.waiting_tasks = max(
-                0, self.waiting_tasks - 1
+                0,
+                self.waiting_tasks - 1
             )
 
             self.running_tasks += 1
 
-            self.record_metrics()
+        self.record_metrics()
 
     def cancel_waiting(self):
 
         with self.task_lock:
 
             self.waiting_tasks = max(
-                0, self.waiting_tasks - 1
+                0,
+                self.waiting_tasks - 1
             )
 
-            self.record_metrics()
+        self.record_metrics()
 
     def finish_task(self):
 
         with self.task_lock:
 
             self.running_tasks = max(
-                0, self.running_tasks - 1
+                0,
+                self.running_tasks - 1
             )
 
-            self.record_metrics()
+        self.record_metrics()
 
-    def record_metrics(self, latency=0, bandwidth=0, transfer=0):
+    def record_metrics(
+        self,
+        latency=0,
+        bandwidth=0,
+        transfer=0
+    ):
+
+        with self.task_lock:
+
+            waiting = self.waiting_tasks
+            running = self.running_tasks
 
         self.monitor.collect(
-            queue_length=self.waiting_tasks,
-            running_tasks=self.running_tasks,
+            queue_length=waiting,
+            running_tasks=running,
             latency_ms=latency,
             bandwidth_mbps=bandwidth,
             transfer_time_ms=transfer
         )
 
+    # ========================================================
+    # 6. LIVE STATUS RESPONSE
+    # ========================================================
+
+    def get_live_status(self):
+
+        with self.task_lock:
+
+            waiting = self.waiting_tasks
+            running = self.running_tasks
+
+        cpu = self.monitor.process.cpu_percent(
+            interval=None
+        )
+
+        ram = self.monitor.process.memory_percent()
+
+        response = {
+            "status": "success",
+            "node_id": self.node_id,
+            "cpu_percent": round(cpu, 2),
+            "ram_percent": round(ram, 2),
+            "waiting_tasks": waiting,
+            "running_tasks": running,
+            "timestamp": time.time()
+        }
+
+        return response
+
+
+# ============================================================
+# 7. START EDGE NODE
+# ============================================================
 
 def start_node(node_id, port):
 
-    server = NodeServer((HOST, port), NodeHandler)
+    server = NodeServer(
+        (HOST, port),
+        NodeHandler
+    )
 
     server.setup_monitoring(node_id)
 
     print("=" * 40)
-    print("Node", node_id, "started successfully")
+    print(f"Node {node_id} started successfully")
     print("IP address:", HOST)
     print("Port:", port)
+    print("Live monitoring: ENABLED")
     print("Waiting for tasks...")
     print("=" * 40)
 
@@ -342,8 +472,21 @@ def start_node(node_id, port):
 
     except KeyboardInterrupt:
 
-        print("\nNode", node_id, "stopping...")
+        print(
+            f"\nNode {node_id} stopping..."
+        )
 
     finally:
 
         server.server_close()
+
+
+# ============================================================
+# 8. ENTRY POINT
+# ============================================================
+
+if __name__ == "__main__":
+    print(
+        "Run Nodes/Node1.py through Nodes/Node4.py "
+        "to start individual edge nodes."
+    )
