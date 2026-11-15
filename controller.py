@@ -11,7 +11,7 @@ import uuid
 from datetime import datetime
 from pathlib import Path
 
-from scheduler_v2 import select_best_node
+from scheduler_v3 import select_best_node
 from tasks.task_generator import create_task
 
 HOST = "127.0.0.1"
@@ -210,7 +210,7 @@ def main():
     for node_id, port in NODES.items():
         print(f"Node {node_id} - Port {port}")
     print("\nScheduling Policy:")
-    print("Real-time resource-aware node selection (V2)")
+    print("Scheduler V3: Parallel Resource-Aware Node Selection")
 
     while True:
         print("\n" + "=" * 50)

@@ -13,7 +13,7 @@ import time
 import uuid
 from pathlib import Path
 
-from scheduler_v2 import get_node_status, select_best_node
+from scheduler_v3 import get_node_status, select_best_node
 
 HOST = "127.0.0.1"
 PORT = 5001
