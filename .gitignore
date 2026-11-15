@@ -19,3 +19,6 @@ env/
 # Temporary files
 *.log
 .DS_Store
+
+# Editor history
+.history/
