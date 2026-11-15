@@ -2,7 +2,6 @@
 
 import socketserver
 import json
-import os
 import time
 import numpy as np
 import threading
@@ -107,6 +106,11 @@ def execute_task(task):
             "first_5": result[:5].tolist()
         }
 
+    elif operation == "process_video_stream":
+        # Load YOLO lazily so normal status polling remains lightweight.
+        from stream_worker import run_stream_task
+        output = run_stream_task(task)
+
     else:
         raise ValueError(
             f"Unknown operation: {operation}"
@@ -196,9 +200,10 @@ class NodeHandler(socketserver.StreamRequestHandler):
             # 4. NORMAL COMPUTATION TASK
             # =================================================
 
-            # One computation slot per node for controlled experiments.
-            # Requests blocked here remain counted as waiting_tasks.
+            # One execution slot; queued requests stay in waiting_tasks.
+            queue_start = time.perf_counter()
             server.worker_semaphore.acquire()
+            queue_wait_ms = (time.perf_counter() - queue_start) * 1000
             slot_acquired = True
             server.start_task()
 
@@ -250,16 +255,8 @@ class NodeHandler(socketserver.StreamRequestHandler):
             print("\nTask received:")
             print(task)
 
-            # Measure simulated service delay plus the actual operation.
-            # Delay is enabled only when EDGE_ENABLE_TEST_DELAY=1.
+            # Measure the execution operation.
             start_time = time.perf_counter()
-
-            if os.environ.get("EDGE_ENABLE_TEST_DELAY") == "1":
-                delay_ms = int(task.get("test_delay_ms", 0))
-                if not 0 <= delay_ms <= 10000:
-                    raise ValueError("test_delay_ms must be 0..10000")
-                if delay_ms:
-                    time.sleep(delay_ms / 1000.0)
 
             response = execute_task(task)
 
@@ -277,6 +274,7 @@ class NodeHandler(socketserver.StreamRequestHandler):
             )
 
             response["latency_ms"] = latency_ms
+            response["queue_wait_ms"] = round(queue_wait_ms, 3)
 
         except Exception as error:
 
