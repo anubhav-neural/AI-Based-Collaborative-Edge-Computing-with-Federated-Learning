@@ -1,4 +1,5 @@
 
+
 import socket
 import json
 import time
@@ -8,7 +9,13 @@ import uuid
 import shutil
 from datetime import datetime
 
+from scheduler import select_best_node
 from tasks.task_generator import create_task
+
+
+# ============================================================
+# 1. NETWORK CONFIGURATION
+# ============================================================
 
 HOST = "127.0.0.1"
 
@@ -21,6 +28,11 @@ nodes = {
 
 CSV_FILE = "execution_results.csv"
 NETWORK_FILE = "network_results.csv"
+
+
+# ============================================================
+# 2. CSV HEADERS
+# ============================================================
 
 EXECUTION_HEADERS = [
     "Task_UID",
@@ -47,7 +59,10 @@ NETWORK_HEADERS = [
 ]
 
 
-# Create CSV or backup old CSV with different headers
+# ============================================================
+# 3. PREPARE CSV FILES
+# ============================================================
+
 def prepare_csv(filename, headers):
 
     if os.path.exists(filename):
@@ -60,7 +75,9 @@ def prepare_csv(filename, headers):
 
             backup = filename.replace(
                 ".csv",
-                "_" + datetime.now().strftime("%Y%m%d_%H%M%S") + "_backup.csv"
+                "_" + datetime.now().strftime(
+                    "%Y%m%d_%H%M%S"
+                ) + "_backup.csv"
             )
 
             shutil.move(filename, backup)
@@ -78,27 +95,43 @@ prepare_csv(CSV_FILE, EXECUTION_HEADERS)
 prepare_csv(NETWORK_FILE, NETWORK_HEADERS)
 
 
-print("===== EDGE COMPUTING CONTROLLER =====")
+# ============================================================
+# 4. DISPLAY CONTROLLER INFORMATION
+# ============================================================
 
-print("\nAvailable Nodes:")
+print("=" * 50)
+print("       INTELLIGENT EDGE COMPUTING CONTROLLER")
+print("=" * 50)
 
-for node, port in nodes.items():
-    print("Node", node, "- Port", port)
+print("\nAvailable Edge Nodes:")
 
+for node_id, port in nodes.items():
+    print(f"Node {node_id} - Port {port}")
+
+print("\nScheduling Policy:")
+print("Historical latency-based automatic node selection")
+
+
+# ============================================================
+# 5. MAIN CONTROLLER LOOP
+# ============================================================
 
 while True:
 
-    print("\n===== TASK MENU =====")
+    print("\n" + "=" * 50)
+    print("TASK MENU")
+    print("=" * 50)
+
     print("1. Matrix Multiplication")
     print("2. Sorting")
     print("3. Numerical Computation")
     print("4. Data Preprocessing")
     print("5. Exit")
 
-    choice = input("\nSelect task: ")
+    choice = input("\nSelect task: ").strip()
 
     if choice == "5":
-        print("Controller stopped")
+        print("\nController stopped successfully.")
         break
 
     task_types = {
@@ -109,24 +142,42 @@ while True:
     }
 
     if choice not in task_types:
-        print("Invalid task choice")
-        continue
-
-    try:
-        node_id = int(input("Select destination node (1-4): "))
-    except ValueError:
-        print("Enter a valid node number")
-        continue
-
-    if node_id not in nodes:
-        print("Invalid node selection")
+        print("Invalid task choice. Try again.")
         continue
 
     operation = task_types[choice]
 
+    # ========================================================
+    # 6. AUTOMATIC INTELLIGENT NODE SELECTION
+    # ========================================================
+
+    print("\nAnalyzing historical node performance...")
+
+    try:
+        node_id = select_best_node(operation)
+
+    except Exception as e:
+        print("Scheduler failed:", str(e))
+        continue
+
+    if node_id not in nodes:
+        print("Scheduler returned an invalid node.")
+        continue
+
+    print("\n" + "=" * 50)
+    print("AUTOMATIC SCHEDULING DECISION")
+    print("=" * 50)
+
+    print(f"Selected Task : {operation}")
+    print(f"Selected Node : Node {node_id}")
+    print(f"Destination   : {HOST}:{nodes[node_id]}")
+
+    # ========================================================
+    # 7. CREATE TASK
+    # ========================================================
+
     task = create_task(operation)
 
-    # Unique identifier for every task submission
     task_uid = str(uuid.uuid4())
 
     task["task_uid"] = task_uid
@@ -134,28 +185,40 @@ while True:
 
     task_id = task.get("task_id", task_uid)
 
-    execution_time = 0
-    total_response_time = 0
-    communication_time = 0
+    print("\nGenerated Task:")
+    print(json.dumps(task, indent=4))
 
-    transfer_time_ms = 0
-    bandwidth = 0
+    # ========================================================
+    # 8. INITIALIZE MEASUREMENT VARIABLES
+    # ========================================================
+
+    execution_time = 0.0
+    total_response_time = 0.0
+    communication_time = 0.0
+
+    transfer_time_ms = 0.0
+    bandwidth = 0.0
     data_size = 0
 
-    network_overhead_ms = 0
-    estimated_delay = 0
+    network_overhead_ms = 0.0
+    estimated_delay = 0.0
 
     status = "Failed"
     error_message = ""
 
     client = None
+    start = None
+
+    # ========================================================
+    # 9. TCP TASK COMMUNICATION
+    # ========================================================
 
     try:
 
-        # Start total response timer
+        print(f"\nConnecting to Node {node_id}...")
+
         start = time.perf_counter()
 
-        # Connect to selected node
         client = socket.create_connection(
             (HOST, nodes[node_id]),
             timeout=10
@@ -163,33 +226,46 @@ while True:
 
         client.settimeout(30)
 
-        # Add timestamp before sending
+        print("TCP connection established.")
+
+        # Add timestamp
         task["sent_timestamp"] = time.time()
 
-        # Convert task into bytes
+        # Encode task as newline-delimited JSON
         message = json.dumps(task) + "\n"
         encoded_message = message.encode("utf-8")
 
-        # Calculate data size
         data_size = len(encoded_message)
 
-        # Measure sending time
+        # ====================================================
+        # 10. SEND TASK
+        # ====================================================
+
+        print("\nSending task...")
+
         send_start = time.perf_counter()
 
         client.sendall(encoded_message)
 
         send_end = time.perf_counter()
 
-        transfer_time_ms = (send_end - send_start) * 1000
+        # Duration of the local sendall() operation
+        transfer_time_ms = (
+            send_end - send_start
+        ) * 1000
 
-        # Calculate estimated bandwidth
         if transfer_time_ms > 0:
-
             bandwidth = (
-                (data_size * 8) / (transfer_time_ms * 1000)
+                (data_size * 8) /
+                (transfer_time_ms * 1000)
             )
 
-        # Receive response from node
+        print("Task sent successfully.")
+
+        # ====================================================
+        # 11. RECEIVE RESPONSE
+        # ====================================================
+
         response = b""
 
         while b"\n" not in response:
@@ -198,128 +274,183 @@ while True:
 
             if not data:
                 raise ConnectionError(
-                    "Connection closed before response"
+                    "Connection closed before full response"
                 )
 
             response += data
 
             if len(response) > 10 * 1024 * 1024:
-                raise ValueError("Response exceeded 10 MB")
+                raise ValueError(
+                    "Response exceeded 10 MB"
+                )
 
-        # Extract one JSON response
         response_line = response.split(b"\n", 1)[0]
 
-        result = json.loads(response_line.decode("utf-8"))
+        result = json.loads(
+            response_line.decode("utf-8")
+        )
 
-        # Stop total response timer
         end = time.perf_counter()
 
         total_response_time = end - start
 
-        # Read execution time from node
+        # ====================================================
+        # 12. EXECUTION TIME
+        # ====================================================
+
         if "execution_time_ms" in result:
 
             execution_time = (
-                result["execution_time_ms"] / 1000
+                float(result["execution_time_ms"]) / 1000
             )
 
         else:
+            execution_time = float(
+                result.get("execution_time", 0)
+            )
 
-            execution_time = result.get("execution_time", 0)
-
-        execution_time = float(execution_time)
-
-        # Calculate communication overhead
+        # This includes non-inference overhead, not only
+        # network transmission time.
         communication_time = max(
-            0,
+            0.0,
             total_response_time - execution_time
         )
 
-        # Estimate network overhead
-        network_overhead_ms = communication_time * 1000
+        network_overhead_ms = (
+            communication_time * 1000
+        )
 
-        # Estimate one-way delay
+        # Rough estimate only; not a measured one-way delay.
         estimated_delay = network_overhead_ms / 2
 
-        # Read task status
-        status = result.get("status", "success")
+        # ====================================================
+        # 13. CHECK TASK STATUS
+        # ====================================================
 
-        if status.lower() != "success":
+        result_status = str(
+            result.get("status", "Failed")
+        ).lower()
+
+        if result_status == "success":
+            status = "success"
+
+        else:
             status = "Failed"
+
             error_message = result.get(
                 "error",
-                result.get("message", "Node reported failure")
+                result.get(
+                    "message",
+                    "Node reported failure"
+                )
             )
 
-        print("\n===== TASK EXECUTION RESULT =====")
+        # ====================================================
+        # 14. DISPLAY EXECUTION RESULTS
+        # ====================================================
+
+        print("\n" + "=" * 50)
+        print("TASK EXECUTION RESULT")
+        print("=" * 50)
 
         print(json.dumps(result, indent=4))
 
-        print("\nExecution Time:", round(execution_time, 6), "seconds")
+        print("\nExecution Summary:")
+
+        print(f"Task ID       : {task_id}")
+        print(f"Selected Node : {node_id}")
+        print(f"Status        : {status}")
 
         print(
-            "Communication Time:",
-            round(communication_time, 6),
-            "seconds"
+            f"Execution Time: "
+            f"{execution_time * 1000:.4f} ms"
         )
 
         print(
-            "Total Response Time:",
-            round(total_response_time, 6),
-            "seconds"
-        )
-
-        print("\n===== NETWORK INFORMATION =====")
-
-        print("Data Size:", data_size, "bytes")
-
-        print(
-            "Transfer Time:",
-            round(transfer_time_ms, 4),
-            "ms"
+            f"Other Overhead: "
+            f"{communication_time * 1000:.4f} ms"
         )
 
         print(
-            "Estimated Bandwidth:",
-            round(bandwidth, 4),
-            "Mbps"
+            f"Total Response: "
+            f"{total_response_time * 1000:.4f} ms"
+        )
+
+        # ====================================================
+        # 15. DISPLAY NETWORK METRICS
+        # ====================================================
+
+        print("\n" + "=" * 50)
+        print("NETWORK INFORMATION")
+        print("=" * 50)
+
+        print(f"Data Size: {data_size} bytes")
+
+        print(
+            f"Local sendall() duration: "
+            f"{transfer_time_ms:.4f} ms"
         )
 
         print(
-            "Estimated Network Overhead:",
-            round(network_overhead_ms, 4),
-            "ms"
+            f"Send-call throughput estimate: "
+            f"{bandwidth:.4f} Mbps"
         )
 
         print(
-            "Estimated One-Way Delay:",
-            round(estimated_delay, 4),
-            "ms"
+            f"Estimated Non-execution Overhead: "
+            f"{network_overhead_ms:.4f} ms"
         )
+
+        print(
+            f"Rough Half-overhead Estimate: "
+            f"{estimated_delay:.4f} ms"
+        )
+
+        print(
+            "\nNote: Send-call throughput is not "
+            "measured network link capacity."
+        )
+
+    # ========================================================
+    # 16. ERROR HANDLING
+    # ========================================================
 
     except Exception as e:
 
         error_message = str(e)
-
         status = "Failed"
 
-        # Record elapsed time even for failed requests
-        if "start" in locals():
-            total_response_time = time.perf_counter() - start
+        if start is not None:
+            total_response_time = (
+                time.perf_counter() - start
+            )
 
         communication_time = total_response_time
 
-        print("\n===== TASK FAILED =====")
+        network_overhead_ms = (
+            communication_time * 1000
+        )
+
+        estimated_delay = network_overhead_ms / 2
+
+        print("\n" + "=" * 50)
+        print("TASK EXECUTION FAILED")
+        print("=" * 50)
+
         print("Task ID:", task_id)
         print("Node ID:", node_id)
         print("Error:", error_message)
+
+    # ========================================================
+    # 17. CLOSE CONNECTION AND SAVE RESULTS
+    # ========================================================
 
     finally:
 
         if client is not None:
             client.close()
 
-        # Save execution results
+        # Save execution measurements
         with open(CSV_FILE, "a", newline="") as file:
 
             writer = csv.writer(file)
@@ -336,7 +467,7 @@ while True:
                 error_message
             ])
 
-        # Save network results
+        # Save networking measurements
         with open(NETWORK_FILE, "a", newline="") as file:
 
             writer = csv.writer(file)
@@ -353,5 +484,6 @@ while True:
                 round(estimated_delay, 4)
             ])
 
-        print("\nTask record saved to", CSV_FILE)
-        print("Network record saved to", NETWORK_FILE)
+        print("\nResults saved successfully.")
+        print("Execution CSV:", CSV_FILE)
+        print("Network CSV:", NETWORK_FILE)
