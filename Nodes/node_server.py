@@ -2,6 +2,7 @@
 
 import socketserver
 import json
+import os
 import time
 import numpy as np
 import threading
@@ -137,6 +138,7 @@ class NodeHandler(socketserver.StreamRequestHandler):
 
         task_started = False
         waiting_accounted = True
+        slot_acquired = False
 
         response = None
         task = {}
@@ -194,6 +196,10 @@ class NodeHandler(socketserver.StreamRequestHandler):
             # 4. NORMAL COMPUTATION TASK
             # =================================================
 
+            # One computation slot per node for controlled experiments.
+            # Requests blocked here remain counted as waiting_tasks.
+            server.worker_semaphore.acquire()
+            slot_acquired = True
             server.start_task()
 
             task_started = True
@@ -244,8 +250,16 @@ class NodeHandler(socketserver.StreamRequestHandler):
             print("\nTask received:")
             print(task)
 
-            # Measure the execution operation.
+            # Measure simulated service delay plus the actual operation.
+            # Delay is enabled only when EDGE_ENABLE_TEST_DELAY=1.
             start_time = time.perf_counter()
+
+            if os.environ.get("EDGE_ENABLE_TEST_DELAY") == "1":
+                delay_ms = int(task.get("test_delay_ms", 0))
+                if not 0 <= delay_ms <= 10000:
+                    raise ValueError("test_delay_ms must be 0..10000")
+                if delay_ms:
+                    time.sleep(delay_ms / 1000.0)
 
             response = execute_task(task)
 
@@ -314,9 +328,12 @@ class NodeHandler(socketserver.StreamRequestHandler):
                 )
 
             finally:
-
-                if task_started:
-                    server.finish_task()
+                try:
+                    if task_started:
+                        server.finish_task()
+                finally:
+                    if slot_acquired:
+                        server.worker_semaphore.release()
 
 
 # ============================================================
@@ -336,6 +353,13 @@ class NodeServer(socketserver.ThreadingTCPServer):
         self.running_tasks = 0
 
         self.task_lock = threading.Lock()
+
+        # Experimental configuration: one computation at a time.
+        # get_status requests do not consume this semaphore.
+        self.max_concurrent_tasks = 1
+        self.worker_semaphore = threading.BoundedSemaphore(
+            self.max_concurrent_tasks
+        )
 
         self.monitor = ResourceMonitor(
             f"Node{node_id}"
