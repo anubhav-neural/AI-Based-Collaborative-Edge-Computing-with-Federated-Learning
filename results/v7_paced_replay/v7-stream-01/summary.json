@@ -1,0 +1,41 @@
+{
+  "stream_id": "v7-stream-01",
+  "status": "success",
+  "model": "yolo11n.pt",
+  "backend": "yolo",
+  "fps_requested": 12.5,
+  "frames_requested": 100,
+  "frames_generated": 100,
+  "frames_processed": 100,
+  "frames_dropped": 0,
+  "frames_not_generated": 0,
+  "drop_rate_pct": 0.0,
+  "deadline_ms": 250.0,
+  "deadline_misses_on_processed": 0,
+  "queue_wait": {
+    "mean_ms": 18.292,
+    "p95_ms": 110.239,
+    "p99_ms": 133.007,
+    "max_ms": 133.798
+  },
+  "inference": {
+    "mean_ms": 68.915,
+    "p95_ms": 83.924,
+    "p99_ms": 101.081,
+    "max_ms": 118.151
+  },
+  "local_release_to_completion": {
+    "mean_ms": 89.505,
+    "p95_ms": 192.412,
+    "p99_ms": 216.503,
+    "max_ms": 220.282
+  },
+  "producer_lateness": {
+    "mean_ms": 2.298,
+    "p95_ms": 2.672,
+    "p99_ms": 7.054,
+    "max_ms": 60.354
+  },
+  "model_initialization_ms_before_start": 3762.331,
+  "frame_metrics_csv": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\results\\v7_paced_replay\\v7-stream-01\\frames.csv"
+}

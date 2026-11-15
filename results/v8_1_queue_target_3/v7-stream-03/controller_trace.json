@@ -1,0 +1,44 @@
+[
+  {
+    "completed_frames": 10,
+    "ewma_inference_ms": 39.3409,
+    "admission_fps": 21.655,
+    "queue_depth": 0
+  },
+  {
+    "completed_frames": 20,
+    "ewma_inference_ms": 38.2179,
+    "admission_fps": 22.721,
+    "queue_depth": 0
+  },
+  {
+    "completed_frames": 30,
+    "ewma_inference_ms": 37.8963,
+    "admission_fps": 23.355,
+    "queue_depth": 0
+  },
+  {
+    "completed_frames": 40,
+    "ewma_inference_ms": 38.2562,
+    "admission_fps": 23.5591,
+    "queue_depth": 0
+  },
+  {
+    "completed_frames": 50,
+    "ewma_inference_ms": 36.4611,
+    "admission_fps": 24.2461,
+    "queue_depth": 0
+  },
+  {
+    "completed_frames": 60,
+    "ewma_inference_ms": 37.4945,
+    "admission_fps": 24.2461,
+    "queue_depth": 0
+  },
+  {
+    "completed_frames": 70,
+    "ewma_inference_ms": 38.1765,
+    "admission_fps": 24.0295,
+    "queue_depth": 0
+  }
+]

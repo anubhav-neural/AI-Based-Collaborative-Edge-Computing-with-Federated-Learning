@@ -22,3 +22,36 @@ env/
 
 # Editor history
 .history/
+
+# Python environment and cache
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Credentials
+.env
+.env.*
+!.env.example
+
+# Large model weights
+*.pt
+*.pth
+*.onnx
+
+# Video datasets
+data/
+*.mp4
+*.avi
+
+# Local backups
+backups/
+*_backup.py
+*_backup.txt
+*_backup/
+controller_incomplete_backup.py
+controller_incomplete_backup.txt
+
+# Temporary outputs
+*.log

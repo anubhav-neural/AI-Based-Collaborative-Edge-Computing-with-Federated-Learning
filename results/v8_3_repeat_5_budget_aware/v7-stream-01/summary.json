@@ -1,0 +1,53 @@
+{
+  "stream_id": "v7-stream-01",
+  "status": "success",
+  "model": "yolo11n.pt",
+  "backend": "yolo",
+  "fps_requested": 35.0,
+  "frames_requested": 150,
+  "frames_generated": 150,
+  "frames_processed": 104,
+  "frames_dropped": 46,
+  "frames_dropped_overflow": 0,
+  "frames_dropped_deadline": 0,
+  "frames_skipped_adaptive": 0,
+  "frames_dropped_budget": 46,
+  "policy": "budget-aware",
+  "estimated_infer_ms": 80.0,
+  "frames_not_generated": 0,
+  "drop_rate_pct": 30.667,
+  "deadline_ms": 250.0,
+  "deadline_misses_on_processed": 0,
+  "frames_on_time": 104,
+  "on_time_generated_pct": 69.333,
+  "queue_wait": {
+    "mean_ms": 97.671,
+    "p95_ms": 113.842,
+    "p99_ms": 142.209,
+    "max_ms": 160.052
+  },
+  "inference": {
+    "mean_ms": 42.607,
+    "p95_ms": 47.31,
+    "p99_ms": 50.303,
+    "max_ms": 51.873
+  },
+  "local_release_to_completion": {
+    "mean_ms": 142.149,
+    "p95_ms": 160.752,
+    "p99_ms": 189.217,
+    "max_ms": 204.044
+  },
+  "producer_lateness": {
+    "mean_ms": 1.871,
+    "p95_ms": 2.167,
+    "p99_ms": 2.668,
+    "max_ms": 26.498
+  },
+  "model_initialization_ms_before_start": 2364.442,
+  "frame_metrics_csv": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\results\\v8_3_repeat_5_budget_aware\\v7-stream-01\\frames.csv",
+  "adaptive_control_trace": null,
+  "final_admission_fps": null,
+  "final_ewma_inference_ms": 42.407,
+  "budget_control_trace": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\results\\v8_3_repeat_5_budget_aware\\v7-stream-01\\budget_trace.json"
+}

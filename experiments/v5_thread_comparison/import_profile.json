@@ -1,0 +1,167 @@
+{
+  "created_utc": "2026-11-15T14:07:34.354321+00:00",
+  "mode": "execute",
+  "video": "data\\cars.mp4",
+  "requested_streams": 4,
+  "max_frames_per_stream": 30,
+  "fps": 12.5,
+  "deadline_ms": 250.0,
+  "assumed_overhead_budget_ms": 50.0,
+  "planning_ms": 10.318,
+  "admitted": [
+    {
+      "stream_index": 1,
+      "node_id": 1,
+      "model": "yolo11s.pt",
+      "heuristic_latency_ms": 85.053,
+      "stream_id": "v5-stream-01"
+    },
+    {
+      "stream_index": 2,
+      "node_id": 2,
+      "model": "yolo11s.pt",
+      "heuristic_latency_ms": 85.053,
+      "stream_id": "v5-stream-02"
+    },
+    {
+      "stream_index": 3,
+      "node_id": 3,
+      "model": "yolo11s.pt",
+      "heuristic_latency_ms": 85.053,
+      "stream_id": "v5-stream-03"
+    },
+    {
+      "stream_index": 4,
+      "node_id": 4,
+      "model": "yolo11s.pt",
+      "heuristic_latency_ms": 85.053,
+      "stream_id": "v5-stream-04"
+    }
+  ],
+  "refused": [],
+  "results": [
+    {
+      "stream_index": 1,
+      "node_id": 1,
+      "model": "yolo11s.pt",
+      "heuristic_latency_ms": 85.053,
+      "stream_id": "v5-stream-01",
+      "status": "success",
+      "request_wall_ms": 9776.552,
+      "server_queue_wait_ms": 0.017,
+      "worker_execution_ms": 9755.161699999007,
+      "frames_processed": 30,
+      "processing_mean_ms": 112.355,
+      "processing_p95_ms": 129.485,
+      "processing_deadline_misses": 0,
+      "metrics": {
+        "stream_id": "v5-stream-01",
+        "model": "yolo11s.pt",
+        "frames_processed": 30,
+        "throughput_fps": 8.858,
+        "processing_mean_ms": 112.355,
+        "processing_p95_ms": 129.485,
+        "processing_p99_ms": 136.07,
+        "processing_deadline_misses": 0,
+        "stream_processing_wall_s": 3.3867,
+        "summary_path": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\results\\stream_jobs\\node1\\v5-stream-01_56da3a85-c992-4770-83d9-3ad5f8836f5b\\video_baseline_summary.json",
+        "frame_metrics_path": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\results\\stream_jobs\\node1\\v5-stream-01_56da3a85-c992-4770-83d9-3ad5f8836f5b\\video_frame_metrics.csv"
+      },
+      "error": null
+    },
+    {
+      "stream_index": 2,
+      "node_id": 2,
+      "model": "yolo11s.pt",
+      "heuristic_latency_ms": 85.053,
+      "stream_id": "v5-stream-02",
+      "status": "success",
+      "request_wall_ms": 10103.334,
+      "server_queue_wait_ms": 0.008,
+      "worker_execution_ms": 10097.767600003863,
+      "frames_processed": 30,
+      "processing_mean_ms": 119.435,
+      "processing_p95_ms": 145.567,
+      "processing_deadline_misses": 0,
+      "metrics": {
+        "stream_id": "v5-stream-02",
+        "model": "yolo11s.pt",
+        "frames_processed": 30,
+        "throughput_fps": 8.34,
+        "processing_mean_ms": 119.435,
+        "processing_p95_ms": 145.567,
+        "processing_p99_ms": 162.89,
+        "processing_deadline_misses": 0,
+        "stream_processing_wall_s": 3.5971,
+        "summary_path": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\results\\stream_jobs\\node2\\v5-stream-02_b96f6c83-3ada-433d-bd75-a47a210378ca\\video_baseline_summary.json",
+        "frame_metrics_path": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\results\\stream_jobs\\node2\\v5-stream-02_b96f6c83-3ada-433d-bd75-a47a210378ca\\video_frame_metrics.csv"
+      },
+      "error": null
+    },
+    {
+      "stream_index": 3,
+      "node_id": 3,
+      "model": "yolo11s.pt",
+      "heuristic_latency_ms": 85.053,
+      "stream_id": "v5-stream-03",
+      "status": "success",
+      "request_wall_ms": 9860.874,
+      "server_queue_wait_ms": 0.014,
+      "worker_execution_ms": 9840.41829999478,
+      "frames_processed": 30,
+      "processing_mean_ms": 110.471,
+      "processing_p95_ms": 144.094,
+      "processing_deadline_misses": 0,
+      "metrics": {
+        "stream_id": "v5-stream-03",
+        "model": "yolo11s.pt",
+        "frames_processed": 30,
+        "throughput_fps": 9.011,
+        "processing_mean_ms": 110.471,
+        "processing_p95_ms": 144.094,
+        "processing_p99_ms": 158.469,
+        "processing_deadline_misses": 0,
+        "stream_processing_wall_s": 3.3291,
+        "summary_path": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\results\\stream_jobs\\node3\\v5-stream-03_5cae3d76-c417-4f9b-ba91-204e46be027b\\video_baseline_summary.json",
+        "frame_metrics_path": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\results\\stream_jobs\\node3\\v5-stream-03_5cae3d76-c417-4f9b-ba91-204e46be027b\\video_frame_metrics.csv"
+      },
+      "error": null
+    },
+    {
+      "stream_index": 4,
+      "node_id": 4,
+      "model": "yolo11s.pt",
+      "heuristic_latency_ms": 85.053,
+      "stream_id": "v5-stream-04",
+      "status": "success",
+      "request_wall_ms": 10106.748,
+      "server_queue_wait_ms": 0.004,
+      "worker_execution_ms": 10102.048799999466,
+      "frames_processed": 30,
+      "processing_mean_ms": 119.747,
+      "processing_p95_ms": 147.177,
+      "processing_deadline_misses": 0,
+      "metrics": {
+        "stream_id": "v5-stream-04",
+        "model": "yolo11s.pt",
+        "frames_processed": 30,
+        "throughput_fps": 8.322,
+        "processing_mean_ms": 119.747,
+        "processing_p95_ms": 147.177,
+        "processing_p99_ms": 164.605,
+        "processing_deadline_misses": 0,
+        "stream_processing_wall_s": 3.605,
+        "summary_path": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\results\\stream_jobs\\node4\\v5-stream-04_41b2bcd0-399a-4a1a-8458-bcbf9243f991\\video_baseline_summary.json",
+        "frame_metrics_path": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\results\\stream_jobs\\node4\\v5-stream-04_41b2bcd0-399a-4a1a-8458-bcbf9243f991\\video_frame_metrics.csv"
+      },
+      "error": null
+    }
+  ],
+  "limitations": [
+    "One coordinator; reservations are memory-only, not shared between controller processes",
+    "Only currently idle nodes admitted, maximum one simultaneous stream per node",
+    "All nodes share a laptop and the same video path; TCP sends metadata, not video frames",
+    "250 ms processing-only threshold is not an end-to-end per-frame deadline",
+    "All runs use the same host-derived model profiles; simultaneous CPU contention may alter performance"
+  ]
+}

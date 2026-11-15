@@ -1,0 +1,1202 @@
+[
+  {
+    "frame_index": 0,
+    "ewma_ms": 45.0,
+    "inflight_remaining_ms": 0.0,
+    "queue_depth": 0,
+    "predicted_new_frame_ms": 51.75,
+    "budget_available_ms": 207.901
+  },
+  {
+    "frame_index": 1,
+    "ewma_ms": 45.0,
+    "inflight_remaining_ms": 49.287,
+    "queue_depth": 0,
+    "predicted_new_frame_ms": 101.037,
+    "budget_available_ms": 233.921
+  },
+  {
+    "frame_index": 2,
+    "ewma_ms": 45.0,
+    "inflight_remaining_ms": 23.927,
+    "queue_depth": 1,
+    "predicted_new_frame_ms": 127.427,
+    "budget_available_ms": 237.133
+  },
+  {
+    "frame_index": 3,
+    "ewma_ms": 43.43,
+    "inflight_remaining_ms": 31.486,
+    "queue_depth": 1,
+    "predicted_new_frame_ms": 131.375,
+    "budget_available_ms": 237.894
+  },
+  {
+    "frame_index": 4,
+    "ewma_ms": 42.938,
+    "inflight_remaining_ms": 43.639,
+    "queue_depth": 1,
+    "predicted_new_frame_ms": 142.397,
+    "budget_available_ms": 238.182
+  },
+  {
+    "frame_index": 5,
+    "ewma_ms": 42.938,
+    "inflight_remaining_ms": 14.529,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 162.666,
+    "budget_available_ms": 237.644
+  },
+  {
+    "frame_index": 6,
+    "ewma_ms": 43.326,
+    "inflight_remaining_ms": 31.318,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 180.793,
+    "budget_available_ms": 237.655
+  },
+  {
+    "frame_index": 7,
+    "ewma_ms": 43.922,
+    "inflight_remaining_ms": 48.761,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 200.29,
+    "budget_available_ms": 236.604
+  },
+  {
+    "frame_index": 8,
+    "ewma_ms": 43.922,
+    "inflight_remaining_ms": 21.513,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 223.553,
+    "budget_available_ms": 237.928
+  },
+  {
+    "frame_index": 9,
+    "ewma_ms": 43.172,
+    "inflight_remaining_ms": 32.105,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 230.695,
+    "budget_available_ms": 237.753
+  },
+  {
+    "frame_index": 10,
+    "ewma_ms": 42.433,
+    "inflight_remaining_ms": 42.858,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 238.049,
+    "budget_available_ms": 238.426
+  },
+  {
+    "frame_index": 11,
+    "ewma_ms": 42.433,
+    "inflight_remaining_ms": 13.315,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 208.506,
+    "budget_available_ms": 237.454
+  },
+  {
+    "frame_index": 12,
+    "ewma_ms": 42.253,
+    "inflight_remaining_ms": 26.574,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 220.938,
+    "budget_available_ms": 237.928
+  },
+  {
+    "frame_index": 13,
+    "ewma_ms": 41.917,
+    "inflight_remaining_ms": 38.652,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 231.472,
+    "budget_available_ms": 238.363
+  },
+  {
+    "frame_index": 14,
+    "ewma_ms": 41.917,
+    "inflight_remaining_ms": 9.77,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 202.59,
+    "budget_available_ms": 238.052
+  },
+  {
+    "frame_index": 15,
+    "ewma_ms": 41.628,
+    "inflight_remaining_ms": 21.856,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 213.346,
+    "budget_available_ms": 238.546
+  },
+  {
+    "frame_index": 16,
+    "ewma_ms": 40.714,
+    "inflight_remaining_ms": 28.968,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 216.254,
+    "budget_available_ms": 238.202
+  },
+  {
+    "frame_index": 17,
+    "ewma_ms": 41.337,
+    "inflight_remaining_ms": 45.451,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 235.603,
+    "budget_available_ms": 238.684
+  },
+  {
+    "frame_index": 18,
+    "ewma_ms": 41.337,
+    "inflight_remaining_ms": 16.591,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 206.743,
+    "budget_available_ms": 238.396
+  },
+  {
+    "frame_index": 19,
+    "ewma_ms": 42.812,
+    "inflight_remaining_ms": 37.555,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 234.492,
+    "budget_available_ms": 237.489
+  },
+  {
+    "frame_index": 20,
+    "ewma_ms": 42.812,
+    "inflight_remaining_ms": 9.187,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 206.124,
+    "budget_available_ms": 237.692
+  },
+  {
+    "frame_index": 21,
+    "ewma_ms": 44.35,
+    "inflight_remaining_ms": 33.685,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 237.695,
+    "budget_available_ms": 238.466
+  },
+  {
+    "frame_index": 22,
+    "ewma_ms": 44.35,
+    "inflight_remaining_ms": 5.201,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 209.211,
+    "budget_available_ms": 238.554
+  },
+  {
+    "frame_index": 23,
+    "ewma_ms": 44.847,
+    "inflight_remaining_ms": 24.253,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 230.547,
+    "budget_available_ms": 238.745
+  },
+  {
+    "frame_index": 24,
+    "ewma_ms": 46.885,
+    "inflight_remaining_ms": 52.9,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 214.652,
+    "budget_available_ms": 238.534
+  },
+  {
+    "frame_index": 25,
+    "ewma_ms": 46.885,
+    "inflight_remaining_ms": 22.79,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 184.542,
+    "budget_available_ms": 236.995
+  },
+  {
+    "frame_index": 26,
+    "ewma_ms": 46.885,
+    "inflight_remaining_ms": 0.0,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 215.669,
+    "budget_available_ms": 238.649
+  },
+  {
+    "frame_index": 27,
+    "ewma_ms": 46.885,
+    "inflight_remaining_ms": 0.0,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 215.669,
+    "budget_available_ms": 238.412
+  },
+  {
+    "frame_index": 28,
+    "ewma_ms": 56.82,
+    "inflight_remaining_ms": 46.478,
+    "queue_depth": 1,
+    "predicted_new_frame_ms": 177.165,
+    "budget_available_ms": 238.382
+  },
+  {
+    "frame_index": 29,
+    "ewma_ms": 56.82,
+    "inflight_remaining_ms": 18.155,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 214.186,
+    "budget_available_ms": 238.631
+  },
+  {
+    "frame_index": 30,
+    "ewma_ms": 56.82,
+    "inflight_remaining_ms": 0.0,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 196.03,
+    "budget_available_ms": 230.225
+  },
+  {
+    "frame_index": 31,
+    "ewma_ms": 56.82,
+    "inflight_remaining_ms": 0.0,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 196.03,
+    "budget_available_ms": 231.005
+  },
+  {
+    "frame_index": 32,
+    "ewma_ms": 56.82,
+    "inflight_remaining_ms": 0.0,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 196.03,
+    "budget_available_ms": 218.676
+  },
+  {
+    "frame_index": 33,
+    "ewma_ms": 56.82,
+    "inflight_remaining_ms": 0.0,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 196.03,
+    "budget_available_ms": 238.246
+  },
+  {
+    "frame_index": 34,
+    "ewma_ms": 82.095,
+    "inflight_remaining_ms": 87.115,
+    "queue_depth": 0,
+    "predicted_new_frame_ms": 181.524,
+    "budget_available_ms": 238.153
+  },
+  {
+    "frame_index": 35,
+    "ewma_ms": 82.095,
+    "inflight_remaining_ms": 44.058,
+    "queue_depth": 0,
+    "predicted_new_frame_ms": 138.467,
+    "budget_available_ms": 223.668
+  },
+  {
+    "frame_index": 36,
+    "ewma_ms": 82.095,
+    "inflight_remaining_ms": 28.978,
+    "queue_depth": 1,
+    "predicted_new_frame_ms": 217.796,
+    "budget_available_ms": 237.159
+  },
+  {
+    "frame_index": 37,
+    "ewma_ms": 83.578,
+    "inflight_remaining_ms": 91.62,
+    "queue_depth": 0,
+    "predicted_new_frame_ms": 187.734,
+    "budget_available_ms": 237.129
+  },
+  {
+    "frame_index": 38,
+    "ewma_ms": 83.578,
+    "inflight_remaining_ms": 64.096,
+    "queue_depth": 0,
+    "predicted_new_frame_ms": 160.21,
+    "budget_available_ms": 238.176
+  },
+  {
+    "frame_index": 39,
+    "ewma_ms": 77.803,
+    "inflight_remaining_ms": 83.51,
+    "queue_depth": 0,
+    "predicted_new_frame_ms": 172.983,
+    "budget_available_ms": 238.071
+  },
+  {
+    "frame_index": 40,
+    "ewma_ms": 77.803,
+    "inflight_remaining_ms": 55.2,
+    "queue_depth": 1,
+    "predicted_new_frame_ms": 234.147,
+    "budget_available_ms": 238.333
+  },
+  {
+    "frame_index": 41,
+    "ewma_ms": 72.222,
+    "inflight_remaining_ms": 70.09,
+    "queue_depth": 1,
+    "predicted_new_frame_ms": 236.201,
+    "budget_available_ms": 238.286
+  },
+  {
+    "frame_index": 42,
+    "ewma_ms": 72.222,
+    "inflight_remaining_ms": 41.588,
+    "queue_depth": 1,
+    "predicted_new_frame_ms": 207.699,
+    "budget_available_ms": 238.355
+  },
+  {
+    "frame_index": 43,
+    "ewma_ms": 67.276,
+    "inflight_remaining_ms": 55.198,
+    "queue_depth": 1,
+    "predicted_new_frame_ms": 209.934,
+    "budget_available_ms": 238.684
+  },
+  {
+    "frame_index": 44,
+    "ewma_ms": 62.541,
+    "inflight_remaining_ms": 64.297,
+    "queue_depth": 1,
+    "predicted_new_frame_ms": 208.141,
+    "budget_available_ms": 238.164
+  },
+  {
+    "frame_index": 45,
+    "ewma_ms": 62.541,
+    "inflight_remaining_ms": 36.327,
+    "queue_depth": 1,
+    "predicted_new_frame_ms": 180.17,
+    "budget_available_ms": 238.765
+  },
+  {
+    "frame_index": 46,
+    "ewma_ms": 58.239,
+    "inflight_remaining_ms": 43.168,
+    "queue_depth": 1,
+    "predicted_new_frame_ms": 177.117,
+    "budget_available_ms": 238.063
+  },
+  {
+    "frame_index": 47,
+    "ewma_ms": 54.399,
+    "inflight_remaining_ms": 49.339,
+    "queue_depth": 1,
+    "predicted_new_frame_ms": 174.458,
+    "budget_available_ms": 238.151
+  },
+  {
+    "frame_index": 48,
+    "ewma_ms": 54.399,
+    "inflight_remaining_ms": 21.326,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 209.004,
+    "budget_available_ms": 238.708
+  },
+  {
+    "frame_index": 49,
+    "ewma_ms": 55.069,
+    "inflight_remaining_ms": 50.876,
+    "queue_depth": 1,
+    "predicted_new_frame_ms": 177.534,
+    "budget_available_ms": 238.254
+  },
+  {
+    "frame_index": 50,
+    "ewma_ms": 55.069,
+    "inflight_remaining_ms": 21.315,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 211.301,
+    "budget_available_ms": 237.264
+  },
+  {
+    "frame_index": 51,
+    "ewma_ms": 57.051,
+    "inflight_remaining_ms": 60.412,
+    "queue_depth": 1,
+    "predicted_new_frame_ms": 191.629,
+    "budget_available_ms": 237.637
+  },
+  {
+    "frame_index": 52,
+    "ewma_ms": 57.051,
+    "inflight_remaining_ms": 33.057,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 229.883,
+    "budget_available_ms": 238.853
+  },
+  {
+    "frame_index": 53,
+    "ewma_ms": 55.935,
+    "inflight_remaining_ms": 54.133,
+    "queue_depth": 1,
+    "predicted_new_frame_ms": 182.783,
+    "budget_available_ms": 238.278
+  },
+  {
+    "frame_index": 54,
+    "ewma_ms": 55.935,
+    "inflight_remaining_ms": 25.594,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 218.569,
+    "budget_available_ms": 238.311
+  },
+  {
+    "frame_index": 55,
+    "ewma_ms": 54.312,
+    "inflight_remaining_ms": 43.334,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 230.711,
+    "budget_available_ms": 238.639
+  },
+  {
+    "frame_index": 56,
+    "ewma_ms": 51.819,
+    "inflight_remaining_ms": 53.519,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 232.294,
+    "budget_available_ms": 238.388
+  },
+  {
+    "frame_index": 57,
+    "ewma_ms": 51.819,
+    "inflight_remaining_ms": 24.783,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 203.558,
+    "budget_available_ms": 238.223
+  },
+  {
+    "frame_index": 58,
+    "ewma_ms": 51.624,
+    "inflight_remaining_ms": 47.262,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 225.365,
+    "budget_available_ms": 238.616
+  },
+  {
+    "frame_index": 59,
+    "ewma_ms": 51.624,
+    "inflight_remaining_ms": 18.511,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 196.614,
+    "budget_available_ms": 238.437
+  },
+  {
+    "frame_index": 60,
+    "ewma_ms": 51.011,
+    "inflight_remaining_ms": 37.754,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 213.742,
+    "budget_available_ms": 238.367
+  },
+  {
+    "frame_index": 61,
+    "ewma_ms": 49.677,
+    "inflight_remaining_ms": 51.978,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 223.365,
+    "budget_available_ms": 238.295
+  },
+  {
+    "frame_index": 62,
+    "ewma_ms": 49.677,
+    "inflight_remaining_ms": 23.573,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 194.96,
+    "budget_available_ms": 238.461
+  },
+  {
+    "frame_index": 63,
+    "ewma_ms": 48.99,
+    "inflight_remaining_ms": 40.345,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 209.359,
+    "budget_available_ms": 238.324
+  },
+  {
+    "frame_index": 64,
+    "ewma_ms": 48.99,
+    "inflight_remaining_ms": 11.795,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 237.147,
+    "budget_available_ms": 238.345
+  },
+  {
+    "frame_index": 65,
+    "ewma_ms": 49.204,
+    "inflight_remaining_ms": 33.482,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 203.235,
+    "budget_available_ms": 238.267
+  },
+  {
+    "frame_index": 66,
+    "ewma_ms": 48.302,
+    "inflight_remaining_ms": 48.442,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 215.085,
+    "budget_available_ms": 238.107
+  },
+  {
+    "frame_index": 67,
+    "ewma_ms": 48.302,
+    "inflight_remaining_ms": 19.855,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 186.499,
+    "budget_available_ms": 238.092
+  },
+  {
+    "frame_index": 68,
+    "ewma_ms": 48.871,
+    "inflight_remaining_ms": 43.538,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 212.142,
+    "budget_available_ms": 238.515
+  },
+  {
+    "frame_index": 69,
+    "ewma_ms": 48.871,
+    "inflight_remaining_ms": 13.249,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 181.853,
+    "budget_available_ms": 236.797
+  },
+  {
+    "frame_index": 70,
+    "ewma_ms": 48.879,
+    "inflight_remaining_ms": 35.207,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 203.841,
+    "budget_available_ms": 238.368
+  },
+  {
+    "frame_index": 71,
+    "ewma_ms": 47.073,
+    "inflight_remaining_ms": 44.631,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 207.033,
+    "budget_available_ms": 238.563
+  },
+  {
+    "frame_index": 72,
+    "ewma_ms": 47.073,
+    "inflight_remaining_ms": 15.764,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 232.3,
+    "budget_available_ms": 238.267
+  },
+  {
+    "frame_index": 73,
+    "ewma_ms": 45.74,
+    "inflight_remaining_ms": 25.952,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 236.356,
+    "budget_available_ms": 238.125
+  },
+  {
+    "frame_index": 74,
+    "ewma_ms": 46.617,
+    "inflight_remaining_ms": 48.871,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 209.699,
+    "budget_available_ms": 238.451
+  },
+  {
+    "frame_index": 75,
+    "ewma_ms": 46.617,
+    "inflight_remaining_ms": 20.542,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 234.981,
+    "budget_available_ms": 238.695
+  },
+  {
+    "frame_index": 76,
+    "ewma_ms": 46.617,
+    "inflight_remaining_ms": 0.0,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 214.438,
+    "budget_available_ms": 238.006
+  },
+  {
+    "frame_index": 77,
+    "ewma_ms": 50.844,
+    "inflight_remaining_ms": 35.834,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 211.245,
+    "budget_available_ms": 238.462
+  },
+  {
+    "frame_index": 78,
+    "ewma_ms": 50.844,
+    "inflight_remaining_ms": 6.97,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 182.381,
+    "budget_available_ms": 238.169
+  },
+  {
+    "frame_index": 79,
+    "ewma_ms": 53.614,
+    "inflight_remaining_ms": 46.211,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 231.181,
+    "budget_available_ms": 238.063
+  },
+  {
+    "frame_index": 80,
+    "ewma_ms": 53.614,
+    "inflight_remaining_ms": 16.247,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 201.217,
+    "budget_available_ms": 236.67
+  },
+  {
+    "frame_index": 81,
+    "ewma_ms": 56.492,
+    "inflight_remaining_ms": 59.867,
+    "queue_depth": 1,
+    "predicted_new_frame_ms": 189.798,
+    "budget_available_ms": 237.523
+  },
+  {
+    "frame_index": 82,
+    "ewma_ms": 56.492,
+    "inflight_remaining_ms": 32.138,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 227.034,
+    "budget_available_ms": 238.365
+  },
+  {
+    "frame_index": 83,
+    "ewma_ms": 56.492,
+    "inflight_remaining_ms": 2.497,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 197.393,
+    "budget_available_ms": 237.295
+  },
+  {
+    "frame_index": 84,
+    "ewma_ms": 59.384,
+    "inflight_remaining_ms": 49.479,
+    "queue_depth": 1,
+    "predicted_new_frame_ms": 186.062,
+    "budget_available_ms": 238.542
+  },
+  {
+    "frame_index": 85,
+    "ewma_ms": 56.103,
+    "inflight_remaining_ms": 60.251,
+    "queue_depth": 1,
+    "predicted_new_frame_ms": 189.288,
+    "budget_available_ms": 238.649
+  },
+  {
+    "frame_index": 86,
+    "ewma_ms": 56.103,
+    "inflight_remaining_ms": 30.496,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 224.051,
+    "budget_available_ms": 237.465
+  },
+  {
+    "frame_index": 87,
+    "ewma_ms": 54.444,
+    "inflight_remaining_ms": 47.979,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 235.811,
+    "budget_available_ms": 237.587
+  },
+  {
+    "frame_index": 88,
+    "ewma_ms": 54.444,
+    "inflight_remaining_ms": 20.168,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 208.0,
+    "budget_available_ms": 238.348
+  },
+  {
+    "frame_index": 89,
+    "ewma_ms": 52.663,
+    "inflight_remaining_ms": 35.236,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 216.925,
+    "budget_available_ms": 238.466
+  },
+  {
+    "frame_index": 90,
+    "ewma_ms": 49.118,
+    "inflight_remaining_ms": 37.366,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 206.822,
+    "budget_available_ms": 238.285
+  },
+  {
+    "frame_index": 91,
+    "ewma_ms": 46.684,
+    "inflight_remaining_ms": 42.807,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 203.867,
+    "budget_available_ms": 238.106
+  },
+  {
+    "frame_index": 92,
+    "ewma_ms": 46.684,
+    "inflight_remaining_ms": 14.627,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 229.373,
+    "budget_available_ms": 238.497
+  },
+  {
+    "frame_index": 93,
+    "ewma_ms": 46.232,
+    "inflight_remaining_ms": 30.101,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 189.602,
+    "budget_available_ms": 238.606
+  },
+  {
+    "frame_index": 94,
+    "ewma_ms": 45.347,
+    "inflight_remaining_ms": 41.849,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 198.297,
+    "budget_available_ms": 238.106
+  },
+  {
+    "frame_index": 95,
+    "ewma_ms": 45.347,
+    "inflight_remaining_ms": 13.414,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 222.012,
+    "budget_available_ms": 238.243
+  },
+  {
+    "frame_index": 96,
+    "ewma_ms": 44.93,
+    "inflight_remaining_ms": 27.636,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 234.314,
+    "budget_available_ms": 238.225
+  },
+  {
+    "frame_index": 97,
+    "ewma_ms": 45.744,
+    "inflight_remaining_ms": 48.479,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 206.296,
+    "budget_available_ms": 237.664
+  },
+  {
+    "frame_index": 98,
+    "ewma_ms": 45.744,
+    "inflight_remaining_ms": 20.619,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 231.041,
+    "budget_available_ms": 238.375
+  },
+  {
+    "frame_index": 99,
+    "ewma_ms": 46.28,
+    "inflight_remaining_ms": 40.836,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 200.502,
+    "budget_available_ms": 238.095
+  },
+  {
+    "frame_index": 100,
+    "ewma_ms": 46.28,
+    "inflight_remaining_ms": 12.453,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 225.34,
+    "budget_available_ms": 238.283
+  },
+  {
+    "frame_index": 101,
+    "ewma_ms": 47.892,
+    "inflight_remaining_ms": 40.18,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 205.408,
+    "budget_available_ms": 238.358
+  },
+  {
+    "frame_index": 102,
+    "ewma_ms": 47.892,
+    "inflight_remaining_ms": 11.556,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 231.86,
+    "budget_available_ms": 238.306
+  },
+  {
+    "frame_index": 103,
+    "ewma_ms": 47.409,
+    "inflight_remaining_ms": 27.235,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 190.794,
+    "budget_available_ms": 237.609
+  },
+  {
+    "frame_index": 104,
+    "ewma_ms": 47.409,
+    "inflight_remaining_ms": 0.0,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 218.079,
+    "budget_available_ms": 237.525
+  },
+  {
+    "frame_index": 105,
+    "ewma_ms": 50.009,
+    "inflight_remaining_ms": 33.74,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 206.272,
+    "budget_available_ms": 237.819
+  },
+  {
+    "frame_index": 106,
+    "ewma_ms": 50.009,
+    "inflight_remaining_ms": 5.357,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 235.399,
+    "budget_available_ms": 238.006
+  },
+  {
+    "frame_index": 107,
+    "ewma_ms": 52.998,
+    "inflight_remaining_ms": 45.331,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 228.174,
+    "budget_available_ms": 238.133
+  },
+  {
+    "frame_index": 108,
+    "ewma_ms": 52.998,
+    "inflight_remaining_ms": 17.231,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 200.074,
+    "budget_available_ms": 238.604
+  },
+  {
+    "frame_index": 109,
+    "ewma_ms": 53.672,
+    "inflight_remaining_ms": 46.008,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 231.176,
+    "budget_available_ms": 238.78
+  },
+  {
+    "frame_index": 110,
+    "ewma_ms": 51.214,
+    "inflight_remaining_ms": 54.788,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 231.478,
+    "budget_available_ms": 237.53
+  },
+  {
+    "frame_index": 111,
+    "ewma_ms": 51.214,
+    "inflight_remaining_ms": 27.11,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 203.8,
+    "budget_available_ms": 238.423
+  },
+  {
+    "frame_index": 112,
+    "ewma_ms": 49.798,
+    "inflight_remaining_ms": 41.415,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 213.219,
+    "budget_available_ms": 238.766
+  },
+  {
+    "frame_index": 113,
+    "ewma_ms": 47.372,
+    "inflight_remaining_ms": 47.173,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 210.607,
+    "budget_available_ms": 238.172
+  },
+  {
+    "frame_index": 114,
+    "ewma_ms": 47.372,
+    "inflight_remaining_ms": 17.33,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 235.241,
+    "budget_available_ms": 236.9
+  },
+  {
+    "frame_index": 115,
+    "ewma_ms": 45.898,
+    "inflight_remaining_ms": 28.349,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 186.698,
+    "budget_available_ms": 238.158
+  },
+  {
+    "frame_index": 116,
+    "ewma_ms": 44.543,
+    "inflight_remaining_ms": 37.797,
+    "queue_depth": 2,
+    "predicted_new_frame_ms": 191.469,
+    "budget_available_ms": 238.586
+  },
+  {
+    "frame_index": 117,
+    "ewma_ms": 44.543,
+    "inflight_remaining_ms": 9.004,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 213.9,
+    "budget_available_ms": 238.364
+  },
+  {
+    "frame_index": 118,
+    "ewma_ms": 44.586,
+    "inflight_remaining_ms": 24.418,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 229.514,
+    "budget_available_ms": 237.511
+  },
+  {
+    "frame_index": 119,
+    "ewma_ms": 43.242,
+    "inflight_remaining_ms": 32.953,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 231.866,
+    "budget_available_ms": 238.269
+  },
+  {
+    "frame_index": 120,
+    "ewma_ms": 41.446,
+    "inflight_remaining_ms": 36.728,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 227.379,
+    "budget_available_ms": 238.387
+  },
+  {
+    "frame_index": 121,
+    "ewma_ms": 41.446,
+    "inflight_remaining_ms": 8.173,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 198.824,
+    "budget_available_ms": 238.403
+  },
+  {
+    "frame_index": 122,
+    "ewma_ms": 41.433,
+    "inflight_remaining_ms": 21.087,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 211.679,
+    "budget_available_ms": 238.495
+  },
+  {
+    "frame_index": 123,
+    "ewma_ms": 41.051,
+    "inflight_remaining_ms": 31.904,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 220.738,
+    "budget_available_ms": 238.767
+  },
+  {
+    "frame_index": 124,
+    "ewma_ms": 40.514,
+    "inflight_remaining_ms": 40.601,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 226.965,
+    "budget_available_ms": 238.259
+  },
+  {
+    "frame_index": 125,
+    "ewma_ms": 40.514,
+    "inflight_remaining_ms": 12.496,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 198.859,
+    "budget_available_ms": 238.724
+  },
+  {
+    "frame_index": 126,
+    "ewma_ms": 40.291,
+    "inflight_remaining_ms": 22.502,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 207.84,
+    "budget_available_ms": 238.085
+  },
+  {
+    "frame_index": 127,
+    "ewma_ms": 40.154,
+    "inflight_remaining_ms": 33.008,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 217.716,
+    "budget_available_ms": 237.679
+  },
+  {
+    "frame_index": 128,
+    "ewma_ms": 40.262,
+    "inflight_remaining_ms": 44.499,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 229.706,
+    "budget_available_ms": 236.882
+  },
+  {
+    "frame_index": 129,
+    "ewma_ms": 40.262,
+    "inflight_remaining_ms": 17.296,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 202.503,
+    "budget_available_ms": 238.251
+  },
+  {
+    "frame_index": 130,
+    "ewma_ms": 40.739,
+    "inflight_remaining_ms": 31.869,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 219.269,
+    "budget_available_ms": 238.17
+  },
+  {
+    "frame_index": 131,
+    "ewma_ms": 40.739,
+    "inflight_remaining_ms": 3.261,
+    "queue_depth": 4,
+    "predicted_new_frame_ms": 237.511,
+    "budget_available_ms": 238.134
+  },
+  {
+    "frame_index": 132,
+    "ewma_ms": 41.808,
+    "inflight_remaining_ms": 22.192,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 214.509,
+    "budget_available_ms": 238.277
+  },
+  {
+    "frame_index": 133,
+    "ewma_ms": 41.061,
+    "inflight_remaining_ms": 30.959,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 219.839,
+    "budget_available_ms": 238.376
+  },
+  {
+    "frame_index": 134,
+    "ewma_ms": 40.533,
+    "inflight_remaining_ms": 40.214,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 226.668,
+    "budget_available_ms": 238.347
+  },
+  {
+    "frame_index": 135,
+    "ewma_ms": 40.533,
+    "inflight_remaining_ms": 11.661,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 198.114,
+    "budget_available_ms": 238.365
+  },
+  {
+    "frame_index": 136,
+    "ewma_ms": 40.229,
+    "inflight_remaining_ms": 21.795,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 206.848,
+    "budget_available_ms": 238.382
+  },
+  {
+    "frame_index": 137,
+    "ewma_ms": 39.167,
+    "inflight_remaining_ms": 26.694,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 206.86,
+    "budget_available_ms": 238.13
+  },
+  {
+    "frame_index": 138,
+    "ewma_ms": 39.069,
+    "inflight_remaining_ms": 36.693,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 216.409,
+    "budget_available_ms": 238.109
+  },
+  {
+    "frame_index": 139,
+    "ewma_ms": 39.069,
+    "inflight_remaining_ms": 8.395,
+    "queue_depth": 4,
+    "predicted_new_frame_ms": 233.04,
+    "budget_available_ms": 238.382
+  },
+  {
+    "frame_index": 140,
+    "ewma_ms": 39.374,
+    "inflight_remaining_ms": 21.081,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 202.203,
+    "budget_available_ms": 238.662
+  },
+  {
+    "frame_index": 141,
+    "ewma_ms": 39.233,
+    "inflight_remaining_ms": 30.704,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 211.174,
+    "budget_available_ms": 238.32
+  },
+  {
+    "frame_index": 142,
+    "ewma_ms": 38.91,
+    "inflight_remaining_ms": 39.838,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 218.825,
+    "budget_available_ms": 238.746
+  },
+  {
+    "frame_index": 143,
+    "ewma_ms": 38.91,
+    "inflight_remaining_ms": 11.24,
+    "queue_depth": 4,
+    "predicted_new_frame_ms": 234.974,
+    "budget_available_ms": 238.719
+  },
+  {
+    "frame_index": 144,
+    "ewma_ms": 39.241,
+    "inflight_remaining_ms": 23.344,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 203.851,
+    "budget_available_ms": 238.42
+  },
+  {
+    "frame_index": 145,
+    "ewma_ms": 39.133,
+    "inflight_remaining_ms": 33.099,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 213.112,
+    "budget_available_ms": 238.137
+  },
+  {
+    "frame_index": 146,
+    "ewma_ms": 38.631,
+    "inflight_remaining_ms": 40.798,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 218.5,
+    "budget_available_ms": 238.334
+  },
+  {
+    "frame_index": 147,
+    "ewma_ms": 38.631,
+    "inflight_remaining_ms": 12.24,
+    "queue_depth": 4,
+    "predicted_new_frame_ms": 234.367,
+    "budget_available_ms": 238.347
+  },
+  {
+    "frame_index": 148,
+    "ewma_ms": 38.412,
+    "inflight_remaining_ms": 20.977,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 197.672,
+    "budget_available_ms": 238.341
+  },
+  {
+    "frame_index": 149,
+    "ewma_ms": 37.748,
+    "inflight_remaining_ms": 26.506,
+    "queue_depth": 3,
+    "predicted_new_frame_ms": 200.149,
+    "budget_available_ms": 238.077
+  }
+]

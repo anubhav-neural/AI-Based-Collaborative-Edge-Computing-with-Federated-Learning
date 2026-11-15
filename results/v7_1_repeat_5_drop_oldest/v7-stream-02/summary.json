@@ -1,0 +1,47 @@
+{
+  "stream_id": "v7-stream-02",
+  "status": "success",
+  "model": "yolo11n.pt",
+  "backend": "yolo",
+  "fps_requested": 35.0,
+  "frames_requested": 150,
+  "frames_generated": 150,
+  "frames_processed": 103,
+  "frames_dropped": 47,
+  "frames_dropped_overflow": 47,
+  "frames_dropped_deadline": 0,
+  "policy": "drop-oldest",
+  "estimated_infer_ms": 80.0,
+  "frames_not_generated": 0,
+  "drop_rate_pct": 31.333,
+  "deadline_ms": 250.0,
+  "deadline_misses_on_processed": 0,
+  "frames_on_time": 103,
+  "on_time_generated_pct": 68.667,
+  "queue_wait": {
+    "mean_ms": 125.326,
+    "p95_ms": 142.253,
+    "p99_ms": 145.252,
+    "max_ms": 145.518
+  },
+  "inference": {
+    "mean_ms": 42.78,
+    "p95_ms": 48.377,
+    "p99_ms": 50.659,
+    "max_ms": 59.13
+  },
+  "local_release_to_completion": {
+    "mean_ms": 169.881,
+    "p95_ms": 187.625,
+    "p99_ms": 190.008,
+    "max_ms": 199.338
+  },
+  "producer_lateness": {
+    "mean_ms": 1.774,
+    "p95_ms": 2.014,
+    "p99_ms": 2.366,
+    "max_ms": 23.01
+  },
+  "model_initialization_ms_before_start": 2356.678,
+  "frame_metrics_csv": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\results\\v7_1_repeat_5_drop_oldest\\v7-stream-02\\frames.csv"
+}

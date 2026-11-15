@@ -1,0 +1,65 @@
+{
+  "created_utc": "2026-11-15T14:31:40.911365+00:00",
+  "version": "v6_prototype",
+  "mode": "plan_only",
+  "video": "data\\cars.mp4",
+  "requested_streams": 4,
+  "max_frames_per_stream": 30,
+  "fps": 40.0,
+  "frame_interval_ms": 25.0,
+  "deadline_ms": 250.0,
+  "model_mode": "auto",
+  "safety_factor": 1.0,
+  "assumed_overhead_budget_ms": 50.0,
+  "planning_ms": 10.11,
+  "admitted": [
+    {
+      "stream_index": 1,
+      "stream_id": "v6-stream-01",
+      "node_id": 1,
+      "model": "yolo11n.pt",
+      "heuristic_latency_ms": 64.919,
+      "predicted_mean_ms": 13.039,
+      "frame_interval_ms": 25.0
+    },
+    {
+      "stream_index": 2,
+      "stream_id": "v6-stream-02",
+      "node_id": 2,
+      "model": "yolo11n.pt",
+      "heuristic_latency_ms": 64.919,
+      "predicted_mean_ms": 13.039,
+      "frame_interval_ms": 25.0
+    },
+    {
+      "stream_index": 3,
+      "stream_id": "v6-stream-03",
+      "node_id": 3,
+      "model": "yolo11n.pt",
+      "heuristic_latency_ms": 64.919,
+      "predicted_mean_ms": 13.039,
+      "frame_interval_ms": 25.0
+    },
+    {
+      "stream_index": 4,
+      "stream_id": "v6-stream-04",
+      "node_id": 4,
+      "model": "yolo11n.pt",
+      "heuristic_latency_ms": 64.919,
+      "predicted_mean_ms": 13.039,
+      "frame_interval_ms": 25.0
+    }
+  ],
+  "refused": [],
+  "results": [],
+  "limitations": [
+    "4 node processes on one laptop share CPU, RAM, and filesystem",
+    "Controller sends video paths and metadata, not video bytes",
+    "Offline playback, not a paced live input stream",
+    "FPS sustainability is an observed mean processing-time screening check, not live queue stability",
+    "250 ms threshold applies only to measured frame processing, not end-to-end delay",
+    "Offline benchmark profiles do not account for concurrent CPU contention",
+    "One coordinator's memory-only reservations do not protect against other coordinators",
+    "YOLO11s preference represents an unvalidated model tier, not an established accuracy advantage"
+  ]
+}

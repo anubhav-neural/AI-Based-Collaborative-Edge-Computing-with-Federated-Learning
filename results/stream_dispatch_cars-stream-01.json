@@ -1,0 +1,123 @@
+{
+  "timestamp_utc": "2026-11-15T11:51:49.953795+00:00",
+  "selected_node": 1,
+  "selected_model": "yolo11s.pt",
+  "stream_id": "cars-stream-01",
+  "placement_ms": 13.409,
+  "request_wall_ms": 13266.681,
+  "placement_plus_request_ms": 13280.09,
+  "server_queue_wait_ms": 0.013,
+  "worker_execution_ms": 13239.734200000385,
+  "stream_metrics": {
+    "stream_id": "cars-stream-01",
+    "model": "yolo11s.pt",
+    "frames_processed": 377,
+    "throughput_fps": 38.302,
+    "processing_mean_ms": 26.077,
+    "processing_p95_ms": 31.858,
+    "processing_p99_ms": 36.716,
+    "processing_deadline_misses": 0,
+    "stream_processing_wall_s": 9.8428,
+    "summary_path": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\results\\stream_jobs\\node1\\cars-stream-01_d15c7f7b-1d2a-41df-ab80-0143385d21a1\\video_baseline_summary.json",
+    "frame_metrics_path": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\results\\stream_jobs\\node1\\cars-stream-01_d15c7f7b-1d2a-41df-ab80-0143385d21a1\\video_frame_metrics.csv"
+  },
+  "candidates": [
+    {
+      "node_id": 1,
+      "model": "yolo11n.pt",
+      "running_tasks": 0,
+      "waiting_tasks": 0,
+      "profile_mean_ms": 13.039,
+      "profile_p95_ms": 14.919,
+      "heuristic_latency_ms": 64.919,
+      "fps_feasible": true,
+      "deadline_feasible": true,
+      "feasible": true
+    },
+    {
+      "node_id": 1,
+      "model": "yolo11s.pt",
+      "running_tasks": 0,
+      "waiting_tasks": 0,
+      "profile_mean_ms": 30.672,
+      "profile_p95_ms": 35.053,
+      "heuristic_latency_ms": 85.053,
+      "fps_feasible": true,
+      "deadline_feasible": true,
+      "feasible": true
+    },
+    {
+      "node_id": 2,
+      "model": "yolo11n.pt",
+      "running_tasks": 0,
+      "waiting_tasks": 0,
+      "profile_mean_ms": 13.039,
+      "profile_p95_ms": 14.919,
+      "heuristic_latency_ms": 64.919,
+      "fps_feasible": true,
+      "deadline_feasible": true,
+      "feasible": true
+    },
+    {
+      "node_id": 2,
+      "model": "yolo11s.pt",
+      "running_tasks": 0,
+      "waiting_tasks": 0,
+      "profile_mean_ms": 30.672,
+      "profile_p95_ms": 35.053,
+      "heuristic_latency_ms": 85.053,
+      "fps_feasible": true,
+      "deadline_feasible": true,
+      "feasible": true
+    },
+    {
+      "node_id": 3,
+      "model": "yolo11n.pt",
+      "running_tasks": 0,
+      "waiting_tasks": 0,
+      "profile_mean_ms": 13.039,
+      "profile_p95_ms": 14.919,
+      "heuristic_latency_ms": 64.919,
+      "fps_feasible": true,
+      "deadline_feasible": true,
+      "feasible": true
+    },
+    {
+      "node_id": 3,
+      "model": "yolo11s.pt",
+      "running_tasks": 0,
+      "waiting_tasks": 0,
+      "profile_mean_ms": 30.672,
+      "profile_p95_ms": 35.053,
+      "heuristic_latency_ms": 85.053,
+      "fps_feasible": true,
+      "deadline_feasible": true,
+      "feasible": true
+    },
+    {
+      "node_id": 4,
+      "model": "yolo11n.pt",
+      "running_tasks": 0,
+      "waiting_tasks": 0,
+      "profile_mean_ms": 13.039,
+      "profile_p95_ms": 14.919,
+      "heuristic_latency_ms": 64.919,
+      "fps_feasible": true,
+      "deadline_feasible": true,
+      "feasible": true
+    },
+    {
+      "node_id": 4,
+      "model": "yolo11s.pt",
+      "running_tasks": 0,
+      "waiting_tasks": 0,
+      "profile_mean_ms": 30.672,
+      "profile_p95_ms": 35.053,
+      "heuristic_latency_ms": 85.053,
+      "fps_feasible": true,
+      "deadline_feasible": true,
+      "feasible": true
+    }
+  ],
+  "limitation": "All nodes share one laptop and video path; TCP carries metadata only. Not true video transport or per-frame end-to-end latency."
+}

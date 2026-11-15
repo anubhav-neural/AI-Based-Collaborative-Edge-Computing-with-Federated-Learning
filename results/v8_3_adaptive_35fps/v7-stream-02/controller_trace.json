@@ -1,0 +1,62 @@
+[
+  {
+    "completed_frames": 10,
+    "ewma_inference_ms": 39.6544,
+    "admission_fps": 23.7201,
+    "queue_depth": 1
+  },
+  {
+    "completed_frames": 20,
+    "ewma_inference_ms": 36.2745,
+    "admission_fps": 25.6438,
+    "queue_depth": 1
+  },
+  {
+    "completed_frames": 30,
+    "ewma_inference_ms": 37.7446,
+    "admission_fps": 26.0688,
+    "queue_depth": 1
+  },
+  {
+    "completed_frames": 40,
+    "ewma_inference_ms": 45.8284,
+    "admission_fps": 23.9447,
+    "queue_depth": 3
+  },
+  {
+    "completed_frames": 50,
+    "ewma_inference_ms": 40.6319,
+    "admission_fps": 24.278,
+    "queue_depth": 2
+  },
+  {
+    "completed_frames": 60,
+    "ewma_inference_ms": 40.7835,
+    "admission_fps": 24.3989,
+    "queue_depth": 2
+  },
+  {
+    "completed_frames": 70,
+    "ewma_inference_ms": 39.4744,
+    "admission_fps": 24.8659,
+    "queue_depth": 2
+  },
+  {
+    "completed_frames": 80,
+    "ewma_inference_ms": 39.798,
+    "admission_fps": 24.9964,
+    "queue_depth": 1
+  },
+  {
+    "completed_frames": 90,
+    "ewma_inference_ms": 37.2763,
+    "admission_fps": 25.9115,
+    "queue_depth": 1
+  },
+  {
+    "completed_frames": 100,
+    "ewma_inference_ms": 41.6922,
+    "admission_fps": 24.9484,
+    "queue_depth": 2
+  }
+]

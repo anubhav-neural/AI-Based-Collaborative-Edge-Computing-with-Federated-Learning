@@ -1,0 +1,26 @@
+{
+  "timestamp_utc": "2026-11-15T13:24:41.415500+00:00",
+  "video": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\data\\cars.mp4",
+  "model": "yolo11s.pt",
+  "device": "cpu",
+  "imgsz": 320,
+  "confidence_threshold": 0.25,
+  "source_fps": 12.5,
+  "source_resolution": [
+    768,
+    432
+  ],
+  "frames_processed": 30,
+  "warmup_frames": 5,
+  "wall_time_s": 1.9923,
+  "throughput_fps": 15.058,
+  "processing_mean_ms": 65.874,
+  "processing_median_ms": 64.081,
+  "processing_p95_ms": 83.72,
+  "processing_p99_ms": 98.956,
+  "model_wall_mean_ms": 64.273,
+  "deadline_ms": 250.0,
+  "processing_deadline_misses": 0,
+  "processing_deadline_miss_rate_pct": 0.0,
+  "note": "Offline sequential processing of every decoded frame. Processing deadline excludes video arrival, network, scheduling, and queueing; it is NOT full end-to-end stream latency."
+}

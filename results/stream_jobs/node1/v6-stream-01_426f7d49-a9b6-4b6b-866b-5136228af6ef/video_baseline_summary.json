@@ -1,0 +1,32 @@
+{
+  "timestamp_utc": "2026-11-15T14:31:12.798905+00:00",
+  "video": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\data\\cars.mp4",
+  "model": "yolo11n.pt",
+  "device": "cpu",
+  "imgsz": 320,
+  "confidence_threshold": 0.25,
+  "source_fps": 12.5,
+  "source_resolution": [
+    768,
+    432
+  ],
+  "frames_processed": 30,
+  "warmup_frames": 0,
+  "model_reused": true,
+  "cv2_import_ms": 0.002,
+  "ultralytics_import_ms": 0.011,
+  "model_load_ms": 0.0,
+  "warmup_total_ms": 0.006,
+  "warmup_prediction_ms": [],
+  "wall_time_s": 1.8013,
+  "throughput_fps": 16.654,
+  "processing_mean_ms": 59.648,
+  "processing_median_ms": 55.81,
+  "processing_p95_ms": 68.775,
+  "processing_p99_ms": 107.556,
+  "model_wall_mean_ms": 56.985,
+  "deadline_ms": 250.0,
+  "processing_deadline_misses": 0,
+  "processing_deadline_miss_rate_pct": 0.0,
+  "note": "Offline sequential processing of every decoded frame. Processing deadline excludes video arrival, network, scheduling, and queueing; it is NOT full end-to-end stream latency."
+}

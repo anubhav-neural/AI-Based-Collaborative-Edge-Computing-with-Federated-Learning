@@ -1,0 +1,243 @@
+{
+  "created_utc": "2026-11-15T15:12:38.858272+00:00",
+  "experiment": "V8 local paced replay adaptive admission vs drop-oldest",
+  "configuration": {
+    "video": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\data\\cars.mp4",
+    "model": "yolo11n.pt",
+    "streams": 4,
+    "frames": 150,
+    "fps": 35.0,
+    "deadline_ms": 250.0,
+    "queue_size": 5,
+    "threads": 2,
+    "warmup": 5,
+    "imgsz": 320,
+    "backend": "yolo",
+    "synthetic": false,
+    "mock_infer_ms": 20,
+    "policy": "drop-oldest",
+    "initial_infer_ms": 45.0,
+    "headroom_factor": 1.1,
+    "ewma_alpha": 0.2,
+    "rate_alpha": 0.5,
+    "control_every": 10,
+    "adaptive_queue_target": 1
+  },
+  "results": [
+    {
+      "stream_id": "v7-stream-01",
+      "status": "success",
+      "model": "yolo11n.pt",
+      "backend": "yolo",
+      "fps_requested": 35.0,
+      "frames_requested": 150,
+      "frames_generated": 150,
+      "frames_processed": 118,
+      "frames_dropped": 32,
+      "frames_dropped_overflow": 32,
+      "frames_dropped_deadline": 0,
+      "frames_skipped_adaptive": 0,
+      "policy": "drop-oldest",
+      "estimated_infer_ms": 80.0,
+      "frames_not_generated": 0,
+      "drop_rate_pct": 21.333,
+      "deadline_ms": 250.0,
+      "deadline_misses_on_processed": 0,
+      "frames_on_time": 118,
+      "on_time_generated_pct": 78.667,
+      "queue_wait": {
+        "mean_ms": 124.728,
+        "p95_ms": 141.408,
+        "p99_ms": 151.843,
+        "max_ms": 155.726
+      },
+      "inference": {
+        "mean_ms": 37.367,
+        "p95_ms": 43.058,
+        "p99_ms": 58.696,
+        "max_ms": 82.91
+      },
+      "local_release_to_completion": {
+        "mean_ms": 163.974,
+        "p95_ms": 182.57,
+        "p99_ms": 193.234,
+        "max_ms": 220.385
+      },
+      "producer_lateness": {
+        "mean_ms": 1.879,
+        "p95_ms": 2.335,
+        "p99_ms": 2.71,
+        "max_ms": 27.116
+      },
+      "model_initialization_ms_before_start": 2085.991,
+      "frame_metrics_csv": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\results\\v8_baseline_35fps\\v7-stream-01\\frames.csv",
+      "adaptive_control_trace": null,
+      "final_admission_fps": null,
+      "final_ewma_inference_ms": null
+    },
+    {
+      "stream_id": "v7-stream-02",
+      "status": "success",
+      "model": "yolo11n.pt",
+      "backend": "yolo",
+      "fps_requested": 35.0,
+      "frames_requested": 150,
+      "frames_generated": 150,
+      "frames_processed": 115,
+      "frames_dropped": 35,
+      "frames_dropped_overflow": 35,
+      "frames_dropped_deadline": 0,
+      "frames_skipped_adaptive": 0,
+      "policy": "drop-oldest",
+      "estimated_infer_ms": 80.0,
+      "frames_not_generated": 0,
+      "drop_rate_pct": 23.333,
+      "deadline_ms": 250.0,
+      "deadline_misses_on_processed": 0,
+      "frames_on_time": 115,
+      "on_time_generated_pct": 76.667,
+      "queue_wait": {
+        "mean_ms": 123.819,
+        "p95_ms": 140.404,
+        "p99_ms": 142.682,
+        "max_ms": 143.031
+      },
+      "inference": {
+        "mean_ms": 38.291,
+        "p95_ms": 41.846,
+        "p99_ms": 47.066,
+        "max_ms": 100.237
+      },
+      "local_release_to_completion": {
+        "mean_ms": 164.025,
+        "p95_ms": 181.781,
+        "p99_ms": 184.79,
+        "max_ms": 237.693
+      },
+      "producer_lateness": {
+        "mean_ms": 1.915,
+        "p95_ms": 2.253,
+        "p99_ms": 6.3,
+        "max_ms": 29.272
+      },
+      "model_initialization_ms_before_start": 2070.354,
+      "frame_metrics_csv": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\results\\v8_baseline_35fps\\v7-stream-02\\frames.csv",
+      "adaptive_control_trace": null,
+      "final_admission_fps": null,
+      "final_ewma_inference_ms": null
+    },
+    {
+      "stream_id": "v7-stream-03",
+      "status": "success",
+      "model": "yolo11n.pt",
+      "backend": "yolo",
+      "fps_requested": 35.0,
+      "frames_requested": 150,
+      "frames_generated": 150,
+      "frames_processed": 114,
+      "frames_dropped": 36,
+      "frames_dropped_overflow": 36,
+      "frames_dropped_deadline": 0,
+      "frames_skipped_adaptive": 0,
+      "policy": "drop-oldest",
+      "estimated_infer_ms": 80.0,
+      "frames_not_generated": 0,
+      "drop_rate_pct": 24.0,
+      "deadline_ms": 250.0,
+      "deadline_misses_on_processed": 0,
+      "frames_on_time": 114,
+      "on_time_generated_pct": 76.0,
+      "queue_wait": {
+        "mean_ms": 124.453,
+        "p95_ms": 141.064,
+        "p99_ms": 142.593,
+        "max_ms": 142.792
+      },
+      "inference": {
+        "mean_ms": 38.608,
+        "p95_ms": 42.259,
+        "p99_ms": 64.807,
+        "max_ms": 76.479
+      },
+      "local_release_to_completion": {
+        "mean_ms": 165.03,
+        "p95_ms": 181.988,
+        "p99_ms": 194.285,
+        "max_ms": 206.296
+      },
+      "producer_lateness": {
+        "mean_ms": 1.969,
+        "p95_ms": 2.236,
+        "p99_ms": 8.131,
+        "max_ms": 31.324
+      },
+      "model_initialization_ms_before_start": 2101.481,
+      "frame_metrics_csv": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\results\\v8_baseline_35fps\\v7-stream-03\\frames.csv",
+      "adaptive_control_trace": null,
+      "final_admission_fps": null,
+      "final_ewma_inference_ms": null
+    },
+    {
+      "stream_id": "v7-stream-04",
+      "status": "success",
+      "model": "yolo11n.pt",
+      "backend": "yolo",
+      "fps_requested": 35.0,
+      "frames_requested": 150,
+      "frames_generated": 150,
+      "frames_processed": 116,
+      "frames_dropped": 34,
+      "frames_dropped_overflow": 34,
+      "frames_dropped_deadline": 0,
+      "frames_skipped_adaptive": 0,
+      "policy": "drop-oldest",
+      "estimated_infer_ms": 80.0,
+      "frames_not_generated": 0,
+      "drop_rate_pct": 22.667,
+      "deadline_ms": 250.0,
+      "deadline_misses_on_processed": 0,
+      "frames_on_time": 116,
+      "on_time_generated_pct": 77.333,
+      "queue_wait": {
+        "mean_ms": 125.22,
+        "p95_ms": 142.071,
+        "p99_ms": 143.493,
+        "max_ms": 144.29
+      },
+      "inference": {
+        "mean_ms": 37.968,
+        "p95_ms": 43.037,
+        "p99_ms": 48.528,
+        "max_ms": 98.804
+      },
+      "local_release_to_completion": {
+        "mean_ms": 165.157,
+        "p95_ms": 182.837,
+        "p99_ms": 185.03,
+        "max_ms": 232.285
+      },
+      "producer_lateness": {
+        "mean_ms": 1.968,
+        "p95_ms": 2.622,
+        "p99_ms": 7.535,
+        "max_ms": 28.404
+      },
+      "model_initialization_ms_before_start": 2059.763,
+      "frame_metrics_csv": "C:\\Users\\Anubhav Verma\\AI-Based-Collaborative-Edge-Computing-with-Federated-Learning\\results\\v8_baseline_35fps\\v7-stream-04\\frames.csv",
+      "adaptive_control_trace": null,
+      "final_admission_fps": null,
+      "final_ewma_inference_ms": null
+    }
+  ],
+  "limitations": [
+    "All workers share the same computer; no independent physical edge nodes",
+    "Recorded video decoded locally, not transmitted over TCP or a physical network",
+    "Local latency measured from scheduled replay tick to completion, not camera-to-result E2E",
+    "Model initialization is performed before the start gate and excluded from frame latency",
+    "Each process has its own frame queue; dropped frames are excluded from processed-frame deadline miss counts",
+    "Adaptive rate uses a per-process inference EWMA; no cross-node joint optimization",
+    "Intentional adaptive skips count as dropped among all generated frames",
+    "A faster local completion of selected frames does not imply more useful outputs",
+    "The local on-time metric uses scheduled replay release, not network or camera timestamps"
+  ]
+}

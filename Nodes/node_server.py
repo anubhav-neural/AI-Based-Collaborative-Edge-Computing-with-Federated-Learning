@@ -1,5 +1,3 @@
-
-
 import socketserver
 import json
 import time
@@ -479,6 +477,16 @@ def start_node(node_id, port):
     )
 
     server.setup_monitoring(node_id)
+
+    # V5.2: prepare the model before the node begins accepting requests.
+    # Small and nano remain separate; nano is cached on first use.
+    # If initialization fails, fail startup instead of advertising a ready node.
+    try:
+        from stream_worker import preload_model
+        preload_model("yolo11s.pt")
+    except Exception:
+        server.server_close()
+        raise
 
     print("=" * 40)
     print(f"Node {node_id} started successfully")

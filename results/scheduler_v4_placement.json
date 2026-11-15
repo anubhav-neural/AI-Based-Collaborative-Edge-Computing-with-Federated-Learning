@@ -1,0 +1,119 @@
+{
+  "created_utc": "2026-11-15T11:44:13.900342+00:00",
+  "stream_id": "cars-stream-01",
+  "requested_fps": 12.5,
+  "deadline_ms": 250.0,
+  "assumed_overhead_budget_ms": 50.0,
+  "polling_and_decision_ms": 9.415,
+  "selected": {
+    "node_id": 1,
+    "model": "yolo11s.pt",
+    "running_tasks": 0,
+    "waiting_tasks": 0,
+    "profile_mean_ms": 30.672,
+    "profile_p95_ms": 35.053,
+    "heuristic_latency_ms": 85.053,
+    "fps_feasible": true,
+    "deadline_feasible": true,
+    "feasible": true
+  },
+  "candidates": [
+    {
+      "node_id": 1,
+      "model": "yolo11n.pt",
+      "running_tasks": 0,
+      "waiting_tasks": 0,
+      "profile_mean_ms": 13.039,
+      "profile_p95_ms": 14.919,
+      "heuristic_latency_ms": 64.919,
+      "fps_feasible": true,
+      "deadline_feasible": true,
+      "feasible": true
+    },
+    {
+      "node_id": 1,
+      "model": "yolo11s.pt",
+      "running_tasks": 0,
+      "waiting_tasks": 0,
+      "profile_mean_ms": 30.672,
+      "profile_p95_ms": 35.053,
+      "heuristic_latency_ms": 85.053,
+      "fps_feasible": true,
+      "deadline_feasible": true,
+      "feasible": true
+    },
+    {
+      "node_id": 2,
+      "model": "yolo11n.pt",
+      "running_tasks": 0,
+      "waiting_tasks": 0,
+      "profile_mean_ms": 13.039,
+      "profile_p95_ms": 14.919,
+      "heuristic_latency_ms": 64.919,
+      "fps_feasible": true,
+      "deadline_feasible": true,
+      "feasible": true
+    },
+    {
+      "node_id": 2,
+      "model": "yolo11s.pt",
+      "running_tasks": 0,
+      "waiting_tasks": 0,
+      "profile_mean_ms": 30.672,
+      "profile_p95_ms": 35.053,
+      "heuristic_latency_ms": 85.053,
+      "fps_feasible": true,
+      "deadline_feasible": true,
+      "feasible": true
+    },
+    {
+      "node_id": 3,
+      "model": "yolo11n.pt",
+      "running_tasks": 0,
+      "waiting_tasks": 0,
+      "profile_mean_ms": 13.039,
+      "profile_p95_ms": 14.919,
+      "heuristic_latency_ms": 64.919,
+      "fps_feasible": true,
+      "deadline_feasible": true,
+      "feasible": true
+    },
+    {
+      "node_id": 3,
+      "model": "yolo11s.pt",
+      "running_tasks": 0,
+      "waiting_tasks": 0,
+      "profile_mean_ms": 30.672,
+      "profile_p95_ms": 35.053,
+      "heuristic_latency_ms": 85.053,
+      "fps_feasible": true,
+      "deadline_feasible": true,
+      "feasible": true
+    },
+    {
+      "node_id": 4,
+      "model": "yolo11n.pt",
+      "running_tasks": 0,
+      "waiting_tasks": 0,
+      "profile_mean_ms": 13.039,
+      "profile_p95_ms": 14.919,
+      "heuristic_latency_ms": 64.919,
+      "fps_feasible": true,
+      "deadline_feasible": true,
+      "feasible": true
+    },
+    {
+      "node_id": 4,
+      "model": "yolo11s.pt",
+      "running_tasks": 0,
+      "waiting_tasks": 0,
+      "profile_mean_ms": 30.672,
+      "profile_p95_ms": 35.053,
+      "heuristic_latency_ms": 85.053,
+      "fps_feasible": true,
+      "deadline_feasible": true,
+      "feasible": true
+    }
+  ],
+  "note": "Decision-only prototype; simulated queue heuristic, local CPU profiles, no stream dispatch or actual end-to-end validation"
+}

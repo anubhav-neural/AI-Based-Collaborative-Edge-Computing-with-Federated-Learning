@@ -1,0 +1,16 @@
+[
+    {
+        "model":  "yolo11n.pt",
+        "concurrent_streams":  4,
+        "measured_mean_ms":  56.904,
+        "conservative_mean_ms":  78.067,
+        "conservative_p95_ms":  99.612
+    },
+    {
+        "model":  "yolo11s.pt",
+        "concurrent_streams":  4,
+        "measured_mean_ms":  97.938,
+        "conservative_mean_ms":  101.949,
+        "conservative_p95_ms":  113.017
+    }
+]
